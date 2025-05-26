@@ -1,0 +1,39 @@
+{% from "components/card/macro.njk" import card as nhsukCard %}
+
+{% if params.columns == 2 %}{% set grid = "one-half" %}
+{% elif params.columns == 3 %}{% set grid = "one-third" %}
+{% elif params.columns == 4 %}{% set grid = "one-quarter" %}
+{% else %}{% set grid = "full" %}{% endif %}
+
+<ul class="nhsuk-grid-row nhsuk-card-group">
+{% set items = getData(params.cards) | sliceFromCollection(params.limit) %}
+{% for item in items %}
+  <li class="nhsuk-grid-column-{{ grid }} nhsuk-card-group__item">
+    {% set descriptionHtml %}
+      {% if item.data.date %}
+      <p class="nhsuk-card__metadata nhsuk-body-s">
+        <time class="nhsuk-u-secondary-text-color" datetime="{{ item.data.date | isoDate }}">{{ item.data.date | nhsukDate }}</time>
+      </p>
+      {% endif %}
+      {% if item.data.description %}
+      <p class="nhsuk-card__description">
+        {{ item.data.description | markdown("inline") }}
+      </p>
+      {% endif %}
+    {% endset %}
+    {{ nhsukCard({
+      clickable: true if item.url and params.clickable,
+      feature: params.feature and not params.secondary,
+      primary: params.primary if item.url,
+      secondary: params.secondary and not params.primary,
+      heading: item.data.title,
+      headingClasses: "nhsuk-heading-s" if params.title else "nhsuk-heading-m",
+      headingLevel: 3 if params.title else 2,
+      href: item.url if item.url,
+      descriptionHtml: descriptionHtml,
+      imgALT: item.data.image.alt,
+      imgURL: item.data.image.src
+    }) }}
+  </li>
+{% endfor %}
+</ul>

@@ -1,0 +1,28 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ nhsukBreadcrumb({
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
+
+{% block content %}
+  {{ appDocumentHeader({
+    caption: caption,
+    title: title,
+    description: description
+  }) }}
+
+  {{ appProseScope(content) if content }}
+
+  {% if collection %}
+    {% set previous = collections[collection] | getPreviousCollectionItem %}
+    {% set next = collections[collection] | getNextCollectionItem %}
+    {{ nhsukPagination({
+      previousUrl: previous.url if previous,
+      previousPage: previous.data.eleventyNavigation.key if previous,
+      nextUrl: next.url if next,
+      nextPage: next.data.eleventyNavigation.key if next
+    }) }}
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% set headingLevel = params.headingLevel or 2 %}
+
+{% if params.items.length > 0 %}
+  <ol class="nhsuk-list nhsuk-list--border nhsuk-u-margin-bottom-5{%- if params.classes %} {{ params.classes }}{% endif %}">
+  {% for item in params.items %}
+    <li>
+      <h{{ headingLevel }} class="nhsuk-heading-m nhsuk-u-reading-width nhsuk-u-margin-bottom-2">
+        <a class="nhsuk-link" href="{{ item.url | pretty }}">{{ item.data.title | smart }}</a>
+      </h{{ headingLevel }}>
+      {% if item.data.date %}
+      <p class="nhsuk-body-s nhsuk-u-reading-width nhsuk-u-margin-bottom-2">
+        <time class="nhsuk-u-secondary-text-color" datetime="{{ item.data.date |isoDate }}">{{ item.data.date | nhsukDate }}</time>
+      </p>
+      {% endif %}
+      {% if item.data.description %}
+      <p class="nhsuk-body nhsuk-u-reading-width nhsuk-u-margin-bottom-0">
+        {{ item.data.description | markdown("inline") | safe }}
+      </p>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ol>
+{% else %}
+  <p class="nhsuk-body">No documents found.</p>
+{% endif %}

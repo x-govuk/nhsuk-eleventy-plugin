@@ -1,0 +1,29 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ nhsukBreadcrumb({
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
+
+{% block content %}
+  {{ appDocumentHeader({
+    caption: caption,
+    title: title,
+    description: description
+  }) }}
+
+  {{ appProseScope(content) if content }}
+
+  {{ appDocumentList({
+    headingLevel: 3 if paginationHeading else 2,
+    items: pagination.items
+  }) }}
+
+  {{ nhsukPagination({
+    previousUrl: pagination.href.previous,
+    previousPage: pagination.page.previous | length + " items",
+    nextUrl: pagination.href.next,
+    nextPage: pagination.page.next | length + " items"
+  }) if pagination.pages.length > 1 }}
+{% endblock %}
