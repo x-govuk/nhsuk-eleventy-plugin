@@ -1,0 +1,37 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ nhsukBreadcrumb({
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+      {{ appSubNavigation({
+        items: collections.navigation | eleventyNavigation(sectionKey or options.homeKey) | itemsFromNavigation(page.url, { pathPrefix: options.pathPrefix })
+      }) }}
+    </div>
+    <div class="nhsuk-grid-column-three-quarters">
+      {{ appDocumentHeader({
+        caption: caption,
+        title: title,
+        description: description
+      }) }}
+
+      {{ appProseScope(content) if content }}
+
+      {% if collection %}
+        {% set previous = collections[collection] | getPreviousCollectionItem %}
+        {% set next = collections[collection] | getNextCollectionItem %}
+        {{ nhsukPagination({
+          previousUrl: previous.url if previous,
+          previousPage: previous.data.eleventyNavigation.key if previous,
+          nextUrl: next.url if next,
+          nextPage: next.data.eleventyNavigation.key if next
+        }) }}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

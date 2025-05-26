@@ -1,0 +1,120 @@
+@use "../../vendor/nhsuk-frontend" as *;
+
+// Site search using Accessible autocomplete
+// Styles below are based on the default accessible autocomplete style sheet
+
+$_icon-size: 28px;
+$_input-border-width: 1px;
+$_input-padding-left: 12px;
+$_input-padding-right: $_input-padding-left + $_icon-size;
+$_input-focus-offset: $nhsuk-focus-width - $_input-border-width;
+
+@include nhsuk-exports("nhsuk-eleventy-plugin/components/search") {
+  .nhsuk-header__search-form[hidden] {
+    display: none; // Remove for nhsuk-frontend v10.0
+  }
+
+  .app-search__wrapper {
+    background-color: $nhsuk-form-element-background-color;
+    border-radius: $nhsuk-border-radius;
+    position: relative;
+    text-align: left; // Remove for nhsuk-frontend v10.0
+
+    @include nhsuk-media-query($until: tablet) {
+      margin-top: nhsuk-spacing(3); // Remove for nhsuk-frontend v10.0
+    }
+  }
+
+  .app-search__hint,
+  .app-search__input {
+    background-color: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M19.71 18.29l-4.11-4.1a7 7 0 1 0-1.41 1.41l4.1 4.11a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42zM5 10a5 5 0 1 1 5 5 5 5 0 0 1-5-5z' fill='%23005eb8'></path></svg>");
+    background-position: center right nhsuk-spacing(1);
+    background-repeat: no-repeat;
+    background-size: $_icon-size;
+    border-radius: $nhsuk-border-radius;
+    padding-left: $_input-padding-left;
+    padding-right: $_input-padding-right;
+    width: 100%;
+  }
+
+  .app-search__input {
+    position: relative;
+
+    &:focus {
+      background-position: center right $_input-border-width;
+      padding-left: $_input-padding-left - $_input-focus-offset;
+      padding-right: $_input-padding-right - $_input-focus-offset;
+    }
+  }
+
+  .app-search__hint {
+    background: none;
+    color: $color_nhsuk-grey-2;
+    position: absolute;
+  }
+
+  .app-search__menu {
+    background-color: $color_nhsuk-white;
+    border-bottom-left-radius: $nhsuk-border-radius;
+    border-bottom-right-radius: $nhsuk-border-radius;
+    color: $nhsuk-text-color;
+    margin: 0;
+    max-height: 560px;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
+  }
+
+  .app-search__menu--visible {
+    display: block;
+  }
+
+  .app-search__menu--hidden {
+    display: none;
+  }
+
+  .app-search__menu--overlay {
+    box-shadow: 0 0 3px 0 rgba($color_nhsuk-grey-1, 0.5);
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 100;
+  }
+
+  .app-search__option {
+    border-bottom: 1px solid $color_nhsuk-grey-5;
+    cursor: pointer;
+    display: block;
+    margin: 0;
+    padding: nhsuk-spacing(3);
+    position: relative;
+    text-decoration: underline;
+
+    @include nhsuk-font($size: 16);
+    @include nhsuk-link-style-default;
+
+    & > * {
+      pointer-events: none;
+    }
+  }
+
+  // Add a transparent outline for when users change their colours.
+  .app-search__option--focused,
+  .app-search__option:hover {
+    border-bottom-color: transparent;
+    outline: $nhsuk-focus-width solid transparent;
+    outline-offset: -$nhsuk-focus-width;
+  }
+
+  .app-search__option--no-results {
+    color: $nhsuk-secondary-text-color;
+    cursor: none;
+    text-decoration: none;
+    @include nhsuk-link-style-text;
+
+    &:hover {
+      color: $nhsuk-secondary-text-color;
+    }
+  }
+}

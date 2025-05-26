@@ -1,0 +1,23 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ nhsukBreadcrumb({
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    {{ appHeading({
+      caption: caption or "Tags",
+      title: title or ("Posts tagged ‘" + tag + "’")
+    }) }}
+
+    {{ appDocumentList({
+      headingLevel: 3 if paginationHeading else 2,
+      items: collections[tag] | reverse
+    }) }}
+  </div>
+</div>
+{% endblock %}

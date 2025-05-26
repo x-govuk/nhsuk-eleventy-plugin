@@ -1,0 +1,29 @@
+{% extends "layouts/base.njk" %}
+
+{% block main %}
+  {{ appHero({
+    title: title,
+    headingClasses: headingClasses,
+    description: description,
+    image: image,
+    startButton: startButton
+  }) }}
+
+  <main class="nhsuk-main-wrapper" id="maincontent">
+    <div class="nhsuk-width-container">
+      {% for group in groups %}
+        {{ appHeading({
+          level: 2,
+          size: "l",
+          caption: group.caption,
+          title: group.title,
+          description: group.description
+        }) if group.title }}
+
+        {{ appCardGroup(group) }}
+      {% endfor %}
+
+      {{ appProseScope(content) if content }}
+    </div>
+  </main>
+{% endblock %}
