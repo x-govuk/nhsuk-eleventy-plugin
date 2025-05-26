@@ -1,0 +1,24 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ nhsukBreadcrumb({
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
+
+{% block content %}
+  {{ appHeading({
+    caption: caption,
+    title: title,
+    description: description
+  }) }}
+
+  <ul class="nhsuk-list nhsuk-list--bullet">
+    {% for tag in collections.tags %}
+    <li>
+      <a class="nhsuk-link" href="/tags/{{ tag | slug }}">{{ tag }}</a>
+      ({{ collections[tag] | length }})
+    </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
