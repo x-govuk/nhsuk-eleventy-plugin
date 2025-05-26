@@ -1,0 +1,18 @@
+{% for section in params.sections %}
+{% set sectionTitle = section.title or "Related links" %}
+{% set sectionId = section.id or sectionTitle | lower | replace(" ", "-") %}
+<aside class="nhsuk-u-reading-width">
+  <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-2">
+    {{- sectionTitle -}}
+  </h2>
+  {% if section.items %}
+  <ul class="nhsuk-list">
+  {% for item in section.items %}
+    <li>
+      <a class="nhsuk-link" href="{{ item.href }}">{{ item.text }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+  {% endif %}
+</aside>
+{% endfor %}
