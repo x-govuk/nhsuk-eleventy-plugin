@@ -1,0 +1,58 @@
+@use "../../vendor/nhsuk-frontend" as *;
+
+@include nhsuk-exports("nhsuk-eleventy-plugin/components/document-list") {
+  .app-document-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .app-document-list__item {
+    border-top: 1px solid $nhsuk-border-color;
+    margin-bottom: nhsuk-spacing(5);
+    padding-top: nhsuk-spacing(2);
+  }
+
+  .app-document-list__item-title {
+    margin: 0 0 nhsuk-spacing(1);
+
+    @include nhsuk-font($size: 19, $weight: "bold");
+  }
+
+  .app-document-list__item-metadata {
+    margin: 0;
+    padding: 0;
+  }
+
+  .app-document-list__item-description {
+    margin: nhsuk-spacing(1) 0;
+
+    @include nhsuk-font($size: 16);
+  }
+
+  .app-document-list__attribute {
+    color: $nhsuk-secondary-text-color;
+    display: inline-block;
+    margin: 0;
+
+    @include nhsuk-font($size: 16);
+
+    & + .app-document-list__attribute::before {
+      content: "\2002•\2002";
+    }
+  }
+
+  .app-document-list--large {
+    .app-document-list__item-title {
+      @include nhsuk-font($size: 26, $weight: "bold");
+    }
+
+    .app-document-list__item-description {
+      @include nhsuk-font($size: 19);
+    }
+
+    .app-document-list__attribute {
+      @include nhsuk-font($size: 16);
+    }
+  }
+}

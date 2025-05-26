@@ -1,0 +1,13 @@
+@use "../../vendor/nhsuk-frontend" as *;
+
+@include nhsuk-exports("nhsuk-eleventy-plugin/components/document-header") {
+  .app-document-header__metadata {
+    @include nhsuk-font($size: 16, $line-height: 1.5);
+    color: $nhsuk-secondary-text-color;
+    max-width: 45em;
+  }
+
+  .app-document-header__description {
+    max-width: 29em;
+  }
+}

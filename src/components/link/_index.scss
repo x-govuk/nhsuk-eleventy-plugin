@@ -1,0 +1,21 @@
+@use "../../vendor/nhsuk-frontend" as *;
+
+.nhsuk-link.app-link--heading {
+  text-decoration: none;
+
+  @include nhsuk-link-style-text;
+
+  &:hover::after,
+  :target &::after {
+    color: $color_nhsuk-grey-1;
+    content: "#";
+    font-variant: all-small-caps;
+    font-weight: normal;
+    margin-left: nhsuk-spacing(1);
+    opacity: 0.5;
+  }
+}
+
+[class^="nhsuk-heading"][tabindex] {
+  outline: none;
+}

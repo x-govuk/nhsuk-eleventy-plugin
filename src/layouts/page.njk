@@ -1,0 +1,16 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
+
+{% block content %}
+  {{ appDocumentHeader({
+    title: title,
+    description: description
+  }) }}
+
+  {{ appProseScope(content) if content }}
+{% endblock %}

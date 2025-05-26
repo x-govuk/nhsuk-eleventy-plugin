@@ -1,0 +1,42 @@
+@use "../../vendor/nhsuk-frontend" as *;
+
+@include nhsuk-exports("nhsuk-eleventy-plugin/components/prose-scope") {
+  .app-prose-scope {
+    // Distinguish inserted text from that inside links
+    ins {
+      text-decoration-style: double;
+    }
+
+    // Use NHS.UK pale yellow colour for highlighted text
+    mark {
+      background-color: nhsuk-tint($color_nhsuk-pale-yellow, 50%);
+    }
+
+    img {
+      height: auto;
+      max-width: 100%;
+      width: auto;
+    }
+
+    // Responsive tables
+    .nhsuk-table[tabindex] {
+      display: block;
+      overflow-x: auto;
+      scrollbar-color: $color_nhsuk-grey-1 $nhsuk-border-color;
+      scrollbar-width: thin;
+
+      &:focus,
+      &:focus-visible {
+        box-shadow:
+          0 0 0 #{$nhsuk-focus-width * 3} $color_nhsuk-black,
+          0 0 0 #{$nhsuk-focus-width * 4} $nhsuk-focus-color;
+        outline: #{$nhsuk-focus-width * 2} solid $color_nhsuk-grey-5;
+      }
+
+      &:focus:not(:focus-visible) {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+}

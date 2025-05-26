@@ -1,0 +1,21 @@
+@use "../../vendor/nhsuk-frontend" as *;
+
+@include nhsuk-exports("nhsuk-eleventy-plugin/components/definition-list") {
+  .app-definition-list {
+    dt {
+      margin-bottom: nhsuk-spacing(1);
+
+      @include nhsuk-font($size: 19, $weight: bold);
+    }
+
+    dd + dt {
+      margin-top: nhsuk-spacing(4);
+    }
+
+    dd {
+      margin-left: nhsuk-spacing(5);
+
+      @include nhsuk-font($size: 19);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
+
+{% block content %}
+  {{ appDocumentHeader({
+    title: title,
+    date: date,
+    modified: modified,
+    author: author,
+    authors: authors,
+    tags: tags
+  }) }}
+
+  {% call appProseScope() %}
+    {{ figure({
+      src: image.src,
+      alt: image.alt,
+      caption: image.caption | markdown("inline")
+    }) if image }}
+
+    {{ content }}
+  {% endcall %}
+{% endblock %}

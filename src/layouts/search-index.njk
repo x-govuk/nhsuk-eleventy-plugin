@@ -1,0 +1,8 @@
+[{% for item in collections.sitemap %}
+  {
+    "title": {{ item.data.title | default("") | dump | safe }},
+    {% if item.data.description %}"description": {{ item.data.description | dump | safe }},{% endif %}
+    "templateContent": {{ item.templateContent | tokenize | default([]) | dump | safe }},
+    "url": {{ item.url | canonicalUrl | pretty | default("") | dump | safe }}
+  }{% if not loop.last %},{% endif %}
+{% endfor %}]

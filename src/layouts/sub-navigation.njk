@@ -1,0 +1,25 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-quarter">
+      {{ appSubNavigation({
+        items: collections.navigation | eleventyNavigation(sectionKey or options.homeKey) | itemsFromNavigation(page.url, { pathPrefix: options.pathPrefix })
+      }) }}
+    </div>
+    <div class="nhsuk-grid-column-three-quarters">
+      {{ appDocumentHeader({
+        title: title,
+        description: description
+      }) }}
+
+      {{ appProseScope(content) if content }}
+    </div>
+  </div>
+{% endblock %}

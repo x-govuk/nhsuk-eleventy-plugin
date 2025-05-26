@@ -1,0 +1,94 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: breadcrumbItems
+  }) if showBreadcrumbs and not hasHero }}
+{% endblock %}
+
+{% block main %}
+{% if hasHero %}
+  <div class="nhsuk-hero">
+    <div class="nhsuk-width-container nhsuk-hero--border">
+      {{ breadcrumb({
+        items: breadcrumbItems
+      }) if showBreadcrumbs }}
+
+      <div class="nhsuk-hero__wrapper nhsuk-u-reading-width">
+        {% if title %}
+        <h1 class="nhsuk-hero__heading">{{ title | smart }}</h1>
+        {% endif %}
+
+        {% if description %}
+        <p class="nhsuk-body-l">
+          {{ description | markdown("inline") | noOrphans }}
+        </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+{% if not hasHero %}
+  <div class="nhsuk-u-reading-width">
+    {% if title %}
+    <h1 class="nhsuk-heading-xl">{{ title | smart }}</h1>
+    {% endif %}
+
+    {% if description %}
+    <p class="nhsuk-lede-text">
+      {{ description | markdown("inline") | noOrphans }}
+    </p>
+    {% endif %}
+  </div>
+{% endif %}
+
+  {{ appProseScope(content) if content }}
+
+  {% for group in groups %}
+    {% if group.title %}
+    <h2 class="nhsuk-heading-l">{{ group.title }}</h2>
+    {% endif %}
+
+    {% if group.columns == 2 %}{% set grid = "one-half" %}
+    {% elif group.columns == 3 %}{% set grid = "one-third" %}
+    {% elif group.columns == 4 %}{% set grid = "one-quarter" %}
+    {% else %}{% set grid = "full" %}{% endif %}
+
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      {% for item in liveWell %}
+      <li class="nhsuk-grid-column-{{ grid }} nhsuk-card-group__item">
+        {% set descriptionHtml %}
+          {% if item.data.date %}
+          <p class="nhsuk-card__metadata nhsuk-body-s">
+            <time class="nhsuk-u-secondary-text-color" datetime="{{ item.date | date }}">{{ item.date | date("d LLLL y") }}</time>
+          </p>
+          {% endif %}
+          {% if item.data.description %}
+          <p class="nhsuk-card__description">
+            {{ item.data.description | markdown("inline") }}
+          </p>
+          {% endif %}
+        {% endset %}
+        {{ card({
+          clickable: true if item.url and group.clickable,
+          feature: group.feature and not group.secondary,
+          primary: group.primary,
+          secondary: group.secondary and not group.primary,
+          heading: item.data.title,
+          headingClasses: "nhsuk-heading-s" if group.title else "nhsuk-heading-m",
+          headingLevel: 3 if group.title else 2,
+          href: item.url,
+          descriptionHtml: descriptionHtml,
+          imgALT: item.data.image.alt,
+          imgURL: item.data.image.src
+        }) }}
+      </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+{% endblock %}

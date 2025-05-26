@@ -1,0 +1,37 @@
+{% extends "layouts/base.njk" %}
+
+{# Create breadcrumbs manually as sitemap should be excluded from collections #}
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [{
+      href: options.parentSite.url,
+      text: options.parentSite.name
+    }, {
+      href: options.pathPrefix,
+      text: options.homeKey
+    }]
+  }) if options.parentSite }}
+{% endblock %}
+
+{% block content %}
+  {{ appDocumentHeader({
+    title: title | default("Sitemap"),
+    description: description
+  }) }}
+
+  {{ appProseScope(content) if content }}
+
+  {% for item in collections.sitemap | eleventyNavigation(options.homeKey) %}
+    <div class="nhsuk-u-margin-bottom-4">
+      <h2 class="nhsuk-heading-s nhsuk-u-margin-bottom-1">
+        <a class="nhsuk-link" href="{{ item.url | canonicalUrl | pretty }}">{{ item.title | smart }}</a>
+      </h2>
+      {% if item.excerpt %}
+        <p class="nhsuk-body">{{ item.excerpt | markdown("inline") | striptags(true) }}</p>
+      {% endif %}
+      {{ collections.sitemap | eleventyNavigation(item.key) | eleventyNavigationToHtml({
+        listClass: "nhsuk-contents-list nhsuk-u-margin-left-4"
+      }) | safe }}
+    </div>
+  {% endfor %}
+{% endblock %}

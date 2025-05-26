@@ -1,0 +1,27 @@
+{% extends "layouts/base.njk" %}
+
+{% block main %}
+  <main id="main-content" role="main" {%- if mainLang %} lang="{{ mainLang }}"{% endif %}>
+    {% call hero({
+      heading: title | smart if title
+    }) %}
+      {% if description %}
+      <p class="nhsuk-body-l">
+        {{ description | markdown("inline") | noOrphans }}
+      </p>
+      {% endif %}
+      {{ button({
+        classes: "nhsuk-button--reverse",
+        href: startButton.href,
+        text: startButton.text | default("Get started")
+      }) if startButton }}
+    {% endcall %}
+    <div class="nhsuk-main-wrapper {%- if mainClasses %} {{ mainClasses }}{% endif %}">
+      <div class="nhsuk-width-container {%- if containerClasses %} {{ containerClasses }}{% endif %}">
+        {% block content %}
+          {{ content }}
+        {% endblock %}
+      </div>
+    </div>
+  </main>
+{% endblock %}
