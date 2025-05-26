@@ -1,0 +1,33 @@
+{% extends "layouts/base.njk" %}
+
+{% block beforeContent %}
+  {{ nhsukBreadcrumb({
+    items: breadcrumbItems
+  }) if showBreadcrumbs }}
+{% endblock %}
+
+{% block content %}
+  {{ appDocumentHeader({
+    caption: caption,
+    title: title,
+    description: description
+  }) }}
+
+  {{ appProseScope(content) if content }}
+
+  {{ appRelated({
+    sections: related.sections or [related]
+  }) if related.sections or related.items | length > 0 }}
+
+  {% if collection %}
+    {% set previous = collections[collection] | getPreviousCollectionItem %}
+    {% set next = collections[collection] | getNextCollectionItem %}
+    {{ nhsukPagination({
+      classes: "nhsuk-u-reading-width",
+      previousUrl: previous.url if previous,
+      previousPage: previous.data.eleventyNavigation.key if previous,
+      nextUrl: next.url if next,
+      nextPage: next.data.eleventyNavigation.key if next
+    }) }}
+  {% endif %}
+{% endblock %}

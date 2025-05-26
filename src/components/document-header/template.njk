@@ -1,0 +1,13 @@
+{% from "components/heading/macro.njk" import appHeading %}
+{% from "components/metadata/macro.njk" import appMetadata %}
+
+<header class="nhsuk-u-reading-width">
+  {{ appHeading({
+    caption: params.caption,
+    title: params.title,
+    description: params.description
+  }) }}
+
+  {{ appMetadata(params) if params.date or params.modified or params.authors or params.author or params.tags }}
+</header>
+
