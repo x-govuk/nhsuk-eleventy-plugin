@@ -75,7 +75,7 @@
     "nhsuk-frontend": "^9.6.1",
     "rimraf": "^6.0.0",
     "rollup": "^4.1.0",
-    "sass": "^1.45.1"
+    "sass": "^1.89.1"
   },
   "devDependencies": {
     "@x-govuk/eslint-config": "^0.0.1",
