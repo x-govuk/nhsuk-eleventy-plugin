@@ -31,7 +31,7 @@ Or, you can customise the search index by using these options:
     [
       { text: "permalink" },
       { text: "string" },
-      { text: "Sets the file name and location (default is `/search-insex.json`). Set to `false` to disable writing this file to the output folder." | markdown }
+      { text: "Sets the file name and location (default is `/search-index.json`). Set to `false` to disable writing this file to the output folder." | markdown }
     ]
   ]
 }) }}
