@@ -31,7 +31,10 @@ export function defaultPluginOptions(options, pathPrefix) {
 
   if (options.templates?.searchIndex) {
     // Enable search in header
-    options.header.search = options?.header?.search || true
+    if (options.header) {
+      options.header.search = options.header?.search || true
+    }
+
     // Add _searchIndexPath to enable search field to be initialised
     options._searchIndexPath =
       options.templates?.searchIndex?.permalink || '/search-index.json'
