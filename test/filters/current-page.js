@@ -43,4 +43,16 @@ describe('currentPage filter', () => {
       { text: 'Styles 2', href: '/styles-2', active: false }
     ])
   })
+
+  it('Returns an empty object if header doesn’t contain navigation', () => {
+    const result = currentPage({}, '/')
+
+    assert.deepEqual(result, {})
+  })
+
+  it('Returns undefined if header is undefined', () => {
+    const result = currentPage(undefined, '/')
+
+    assert.deepEqual(result, undefined)
+  })
 })

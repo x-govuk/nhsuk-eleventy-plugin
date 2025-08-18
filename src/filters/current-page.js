@@ -8,7 +8,7 @@ import { currentPage as getCurrentPage } from '@x-govuk/govuk-eleventy-plugin/fi
  * @returns {Array} Header items
  */
 export function currentPage(header, pageUrl) {
-  if (!header.navigation?.items) {
+  if (!header || !header.navigation?.items) {
     return header
   }
 
