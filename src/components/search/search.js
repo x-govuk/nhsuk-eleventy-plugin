@@ -39,7 +39,7 @@ export class SearchElement extends HTMLElement {
     return searchIndex.filter((item) => {
       const regex = new RegExp(searchQuery, 'gi')
       return (
-        item.title.match(regex) ||
+        item?.title?.match(regex) ||
         item?.description?.match(regex) ||
         item?.tokens?.match(regex)
       )
