@@ -8,7 +8,7 @@
       {{ nhsukCard({
         secondary: true,
         heading: item.heading,
-        headingClasses: params.headingClasses or "nhsuk-u-font-size-26",
+        headingClasses: params.headingClasses or "nhsuk-u-font-size-26" + (" nhsuk-u-margin-bottom-2" if item.descriptionHtml else ""),
         headingLevel: params.headingLevel or 2,
         href: item.href,
         descriptionHtml: item.descriptionHtml

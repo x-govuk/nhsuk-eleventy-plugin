@@ -27,7 +27,11 @@ function getDescriptionHtml(item) {
   let html = ''
 
   if (item.date) {
-    html += `<p class="nhsuk-body-s"><time class="nhsuk-u-secondary-text-colour" datetime="${isoDate(item.date)}">${nhsukDate(item.date)}</time></p>`
+    const classes = item.description
+      ? 'nhsuk-body-s nhsuk-u-margin-bottom-2'
+      : 'nhsuk-body-s'
+
+    html += `<p class="${classes}"><time class="nhsuk-u-secondary-text-colour" datetime="${isoDate(item.date)}">${nhsukDate(item.date)}</time></p>`
   }
 
   if (item.description) {

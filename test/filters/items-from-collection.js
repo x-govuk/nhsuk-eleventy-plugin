@@ -45,7 +45,7 @@ describe('itemsFromNavigation filter', () => {
         href: '/two',
         heading: 'Two',
         descriptionHtml:
-          '<p class="nhsuk-body-s"><time class="nhsuk-u-secondary-text-colour" datetime="2025-08-03T00:00:00.000Z">3 August 2025</time></p><p class="nhsuk-card__description">Description</p>',
+          '<p class="nhsuk-body-s nhsuk-u-margin-bottom-2"><time class="nhsuk-u-secondary-text-colour" datetime="2025-08-03T00:00:00.000Z">3 August 2025</time></p><p class="nhsuk-card__description">Description</p>',
         imgURL: '/image.jpg',
         imgALT: 'Alternative text'
       }
@@ -89,7 +89,7 @@ describe('itemsFromNavigation filter', () => {
         href: '/two',
         heading: 'Two',
         descriptionHtml:
-          '<p class="nhsuk-body-s"><time class="nhsuk-u-secondary-text-colour" datetime="2025-08-03T00:00:00.000Z">3 August 2025</time></p><p class="nhsuk-card__description">Description</p>',
+          '<p class="nhsuk-body-s nhsuk-u-margin-bottom-2"><time class="nhsuk-u-secondary-text-colour" datetime="2025-08-03T00:00:00.000Z">3 August 2025</time></p><p class="nhsuk-card__description">Description</p>',
         imgURL: '/image.jpg',
         imgALT: 'Alternative text'
       }
