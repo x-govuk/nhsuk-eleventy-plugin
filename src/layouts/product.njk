@@ -21,7 +21,7 @@
           description: group.description
         }) if group.title }}
 
-        {{ appCardGroup(group) }}
+        {{ appCardGroup(group) if group.items }}
       {% endfor %}
 
       {{ appProseScope(content) if content }}
