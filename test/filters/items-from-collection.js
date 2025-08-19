@@ -75,7 +75,7 @@ describe('itemsFromNavigation filter', () => {
       {
         href: '/two',
         date: '2025-08-03',
-        text: 'Two',
+        title: 'Two',
         description: 'Description',
         image: {
           src: '/image.jpg',

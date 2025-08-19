@@ -141,9 +141,9 @@ In addition to [common front matter options](/layouts/front-matter-options), thi
   ],
   rows: [
     [
-      { text: "heading" },
+      { text: "title" },
       { text: "string" },
-      { text: "Card heading" }
+      { text: "Card title" }
     ],
     [
       { text: "href" },

@@ -54,7 +54,7 @@ export function itemsFromCollection(array, n) {
       return {
         href: item.url,
         date: item.data.date,
-        text: item.data.title,
+        title: item.data.title,
         description: item.data.description,
         image: item.data.image
       }
@@ -63,7 +63,7 @@ export function itemsFromCollection(array, n) {
 
   array = array.map((item) => ({
     href: item.href,
-    heading: smart(item.text),
+    heading: smart(item.title),
     descriptionHtml: getDescriptionHtml(item),
     ...(item.image && { imgURL: item.image.src }),
     ...(item.image && { imgALT: item.image.alt })
