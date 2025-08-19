@@ -107,7 +107,7 @@ export async function nhsukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
 
     eleventyConfig.addTemplate(
       'tag.11ty.js',
-      new TagTemplate(options.templates.tags, slugify)
+      new TagTemplate({ ...options.templates.tags, slugify })
     )
   }
 
