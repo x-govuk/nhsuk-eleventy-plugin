@@ -1,0 +1,13 @@
+@use "../../vendor/nhsuk-frontend" as *;
+
+@include nhsuk-exports("nhsuk-eleventy-plugin/components/card") {
+
+  .nhsuk-card-group__item .app-card--reduced-spacing {
+    margin-bottom: nhsuk-spacing(4);
+  }
+
+  .app-card--reduced-spacing .nhsuk-card__content {
+    padding-bottom: nhsuk-spacing(4);
+  }
+
+}
