@@ -2,7 +2,7 @@
 
 // Use same colour for inline code as that used on NHS.UK Digital service manual.
 // https://github.com/nhsuk/nhsuk-service-manual/blob/main/app/stylesheets/app/_code-highlight.scss
-$_code-color: #dd1144;
+$_code-colour: #dd1144;
 
 @include nhsuk-exports("nhsuk-eleventy-plugin/components/code") {
   .app-code--inline,
@@ -13,7 +13,7 @@ $_code-color: #dd1144;
 
   .app-code--inline {
     background-color: nhsuk-colour("white");
-    color: $_code-color;
+    color: $_code-colour;
     font-size: 0.875em;
     padding: 2px nhsuk-spacing(1);
 
