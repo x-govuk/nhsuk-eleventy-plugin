@@ -34,26 +34,11 @@
   }
 
   .app-sub-navigation__link {
-    text-decoration: none;
+    @include nhsuk-link-style-default;
+    @include nhsuk-link-style-no-visited-state;
 
-    @include nhsuk-media-query($until: desktop) {
-      text-decoration: underline;
-    }
-
-    &:visited {
-      color: nhsuk-colour("blue");
-    }
-
-    &:hover {
-      color: $nhsuk-link-hover-colour;
-      text-decoration: underline;
-    }
-
-    &:focus {
-      &:hover,
-      &:visited {
-        color: $nhsuk-focus-text-colour;
-      }
+    &:link {
+      text-decoration: none;
     }
   }
 
