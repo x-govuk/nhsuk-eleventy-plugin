@@ -24,7 +24,7 @@
   }
 
   .app-sub-navigation__item--current {
-    border-left: $nhsuk-border-width solid nhsuk-colour("blue");
+    border-left: $nhsuk-border-width solid $nhsuk-brand-colour;
     margin-left: #{$nhsuk-gutter-half * -1};
     padding-left: #{$nhsuk-gutter-half - $nhsuk-border-width};
 
