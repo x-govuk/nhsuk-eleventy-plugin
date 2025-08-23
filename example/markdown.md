@@ -63,6 +63,8 @@ The rendered output looks like this:
 
 > No society can legitimately call itself civilised if a sick person is denied aid because of lack of means..
 
+Do not use blockquotes to emphasis context. Use [alerts](#alerts) instead.
+
 ### Blockquotes with multiple paragraphs
 
 Blockquotes can contain multiple paragraphs. Add a `>` on the blank lines between the paragraphs.
@@ -94,6 +96,80 @@ The rendered output looks like this:
 > No society can legitimately call itself civilised if a sick person is denied aid because of lack of means..
 >
 > > Society becomes more wholesome, more serene, and spiritually healthier, if it knows that its citizens have at the back of their consciousness the knowledge that not only themselves, but all their fellows, have access, when ill, to the best that medical care can provide.
+
+## Alerts
+
+Alerts, based on the blockquote syntax, can be used emphasise critical information. [On GitHub they are displayed with distinctive colors and icons](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts), while pages rendered by the plugin use equivalent components from the NHS design system.
+
+### Note and tip alerts
+
+Note and tip alerts are rendered as [inset text](https://service-manual.nhs.uk/design-system/components/inset-text):
+
+```markdown
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+```
+
+The rendered output looks like this:
+
+> [!NOTE]
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+You can also include a title:
+
+```markdown
+> [!NOTE] Reporting side effects
+> You can report any suspected side effect to the [UK safety scheme](https://yellowcard.mhra.gov.uk/).
+```
+
+The rendered output looks like this:
+
+> [!NOTE] Reporting side effects
+> You can report any suspected side effect to the [UK safety scheme](https://yellowcard.mhra.gov.uk/).
+
+### Important, warning and caution alerts
+
+Important, warning and caution alerts are rendered as [warning callouts](https://service-manual.nhs.uk/design-system/components/warning-callout):
+
+```markdown
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+```
+
+The rendered output looks like this:
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
+If you include a title, this will be shown in the heading instead of the alert type:
+
+```markdown
+> [!WARNING] School, nursery or work
+> Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.
+```
+
+The rendered output looks like this:
+
+> [!WARNING] School, nursery or work
+> Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.
 
 ## Lists
 

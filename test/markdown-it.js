@@ -23,6 +23,42 @@ describe('markdown-it', () => {
     )
   })
 
+  it('Renders a note alert as inset text', () => {
+    const result = md().render('> [!NOTE]\n> Text')
+
+    assert.equal(
+      result,
+      `<div class="nhsuk-inset-text app-inset-text--note"><span class="nhsuk-u-visually-hidden">Note: </span><p class="nhsuk-body">Text</p>\n</div>\n`
+    )
+  })
+
+  it('Renders a note alert with title as inset text with heading', () => {
+    const result = md().render('> [!NOTE] Heading\n> Text')
+
+    assert.equal(
+      result,
+      `<div class="nhsuk-inset-text app-inset-text--note"><h3 class="nhsuk-heading-m"><span class="nhsuk-u-visually-hidden">Note: </span>Heading</h3><p class="nhsuk-body">Text</p>\n</div>\n`
+    )
+  })
+
+  it('Renders an important alert as a warning callout', () => {
+    const result = md().render('> [!IMPORTANT]\n> Text')
+
+    assert.equal(
+      result,
+      `<div class="nhsuk-warning-callout app-warning-callout--important"><h3 class="nhsuk-warning-callout__label">Important</h3><p class="nhsuk-body">Text</p>\n</div>\n`
+    )
+  })
+
+  it('Renders an important alert with title as warning callout with heading', () => {
+    const result = md().render('> [!IMPORTANT] Heading\n> Text')
+
+    assert.equal(
+      result,
+      `<div class="nhsuk-warning-callout app-warning-callout--important"><h3 class="nhsuk-warning-callout__label"><span class="nhsuk-u-visually-hidden">Important: </span>Heading</h3><p class="nhsuk-body">Text</p>\n</div>\n`
+    )
+  })
+
   it('Renders a definition list', () => {
     const result = md().render('Term\n: Definition')
 
