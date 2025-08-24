@@ -9,7 +9,7 @@
   {{- params.title | safe -}}
 </h{{level}}>
 {% if params.description -%}
-<p class="nhsuk-lede-text">
+<p class="{{ "nhsuk-lede-text" if level == 1 else "nhsuk-body nhsuk-u-reading-width" }}">
   {{- params.description | markdown("inline") | noOrphans | safe -}}
 </p>
 {% endif %}
