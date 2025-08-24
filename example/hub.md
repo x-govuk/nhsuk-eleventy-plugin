@@ -8,12 +8,12 @@ groups:
     items: hub.section1
     limit: 3
   - clickable: true
-    primary: true
+    type: "primary"
     columns: 2
     items: hub.section2
     limit: 9
   - clickable: true
-    secondary: true
+    type: "secondary"
     columns: 3
     items: hub.section3
     limit: 12
