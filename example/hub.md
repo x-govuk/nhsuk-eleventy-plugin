@@ -17,4 +17,18 @@ groups:
     columns: 3
     items: hub.section3
     limit: 12
+related:
+  - title: Hub layout
+    description: This is a demo of the hub layout
+  - items:
+      - text: Collection layout example
+        href: /collection
+      - text: Page layout example
+        href: /page
+      - text: Page with sub navigation example
+        href: /page-with-sub-navigation
+      - text: Post layout example
+        href: /post
+      - text: Product page layout example
+        href: /
 ---

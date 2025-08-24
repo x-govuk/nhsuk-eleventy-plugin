@@ -19,4 +19,18 @@ groups:
         description: Test designs with people who use assistive technology, including screen readers, voice control and screen magnification.
       - title: Free and open source
         description: No licence fees to pay. No need for procurement. Use with common free tools like Git and GitHub for collaboration.
+related:
+  - title: Product page layout
+    description: This is a demo of the product page layout
+  - items:
+      - text: Collection layout example
+        href: /collection
+      - text: Hub layout example
+        href: /hub
+      - text: Page layout example
+        href: /page
+      - text: Page with sub navigation layout example
+        href: /page-with-sub-navigation
+      - text: Post layout example
+        href: /post
 ---
