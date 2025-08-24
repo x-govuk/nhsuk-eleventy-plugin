@@ -45,9 +45,3 @@ Then update the `collection` template option to use `'guide'`.
 ## Change how entries appear in your feed
 
 The RSS feed uses the [feed layout](/layouts/feed). You can override this layout to change how entries appear in your feed.
-
-## Replace the RSS feed
-
-You can create your own RSS feed that replaces this one. To do this, create a page that saves to the same location (by default `/feed.xml`).
-
-When you do this, your page will be used instead of the plugin’s default.

@@ -24,9 +24,3 @@ Or, you can customise the page by using these options:
 ## Change how the sitemap page looks
 
 The sitemap page uses the [sitemap layout](/layouts/sitemap). You can override this layout to change how the page appears.
-
-## Replace the sitemap page
-
-You can create your own sitemap page that replaces this one. To do this, create a page that saves to the same location (by default `/sitemap/`).
-
-When you do this, your page will be used instead of the plugin’s default.
