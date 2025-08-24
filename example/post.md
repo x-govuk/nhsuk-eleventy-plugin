@@ -13,11 +13,21 @@ author:
 tags:
   - content
   - language
+showPagination: true
 related:
-  items:
-    - href: https://digital.nhs.uk/blog/design-matters
-      text: Design Matters Blog
-      description: Read more about how we’re putting users’ needs at the heart of digital services and technology.
+  - title: Page layout
+    description: This is a demo of the post layout
+  - items:
+      - text: Collection layout example
+        href: /collection
+      - text: Hub layout example
+        href: /hub
+      - text: Page layout example
+        href: /page
+      - text: Page with sub navigation layout example
+        href: /page-with-sub-navigation
+      - text: Product page layout example
+        href: /
 ---
 
 People come to the [NHS website](https://www.nhs.uk/) to get answers to their questions about health, so they need web pages that are easy to understand. The content designers who write our pages know that the words we use affect how well, and how quickly, people understand. And that affects their health.

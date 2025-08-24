@@ -3,6 +3,20 @@ layout: sub-navigation
 title: Accessibility
 description: How to make digital services in the NHS work for everyone.
 showPagination: true
+related:
+  - title: Page with sub navigation layout
+    description: This is a demo of the page with sub navigation layout
+  - items:
+      - text: Collection layout example
+        href: /collection
+      - text: Hub layout example
+        href: /hub
+      - text: Page layout example
+        href: /page
+      - text: Post layout example
+        href: /post
+      - text: Product page layout example
+        href: /
 ---
 
 Your service must be accessible to everyone who needs it. If it’s not, you may be breaking the law.
