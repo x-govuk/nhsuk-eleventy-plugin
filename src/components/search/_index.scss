@@ -31,6 +31,7 @@ $_input-padding-right: nhsuk-px-to-rem(12px + $_icon-size);
 
     &:focus {
       background-position: top nhsuk-px-to-rem(3px) right nhsuk-px-to-rem(6px);
+      padding-right: $_input-padding-right;
     }
   }
 
