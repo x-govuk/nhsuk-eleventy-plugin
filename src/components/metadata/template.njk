@@ -29,22 +29,22 @@
       <time datetime="{{ params.date | isoDate }}">{{ params.date | nhsukDate }}</time>
     </dd>
   </div>
-  {%- endif -%}
-  {%- if params.modified -%}
+  {% endif %}
+  {% if params.modified %}
   <div class="app-metadata__item">
     <dt class="app-metadata__term">Last updated</dt>
     <dd class="app-metadata__definition">
       <time datetime="{{ params.modified | isoDate }}">{{ params.modified | nhsukDate }}</time>
     </dd>
   </div>
-  {%- endif -%}
-  {%- if params.tags | length > 0 -%}
+  {% endif %}
+  {% if params.tags | length > 0 %}
   <div class="app-metadata__item">
     <dt class="app-metadata__term">Tagged</dt>
-    <dd class="app-metadata__definition">{%- for tag in params.tags %}
+    <dd class="app-metadata__definition">{% for tag in params.tags -%}
       <a href="/tags/{{ tag | slug }}" class="nhsuk-link">{{ tag }}</a>
       {%- if not loop.last %}, {% endif -%}
-    {%- endfor -%}</dd>
+    {%- endfor %}</dd>
   </div>
-  {%- endif -%}
+  {% endif %}
 </dl>
