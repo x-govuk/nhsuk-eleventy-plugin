@@ -18,44 +18,13 @@ To enable an RSS feed for all posts on your site, set `templates.feed` to `true`
 
 Or, you can customise the feed by using these options:
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
-{{ govukTable({
-  caption: "Feature options",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "title" },
-      { text: "string" },
-      { text: "Sets the feed title (default is `Feed`)" | markdown }
-    ],
-    [
-      { text: "collection" },
-      { text: "string" },
-      { text: "Sets the collection to use for feed entries (default is `feed`)" | markdown }
-    ],
-    [
-      { text: "size" },
-      { text: "number" },
-      { text: "Sets the number of recent entries to include in the feed (default is `20`)" | markdown }
-    ],
-    [
-      { text: "url" },
-      { text: "string" },
-      { text: "Sets the base URL for the feed (default is value used for `options.url`)" | markdown }
-    ],
-    [
-      { text: "permalink" },
-      { text: "string" },
-      { text: "Sets the file name and location (default is `/feed.xml`). Set to `false` to disable writing this file to the output folder." | markdown }
-    ]
-  ]
-}) }}
+| Name       | Type    | Description                                                                                                                 |
+| ---------- | ------- | --------------------------------------------------------------------------------------------------------------------------- |
+| title      | string  | Sets the feed title (default is `Feed`)                                                                                     |
+| collection | string  | Sets the collection to use for feed entries (default is `feed`)                                                             |
+| size       | integer | Sets the number of recent entries to include in the feed (default is `20`)                                                  |
+| url        | string  | Sets the base URL for the feed (default is value used for `options.url`)                                                    |
+| permalink  | string  | Sets the file name and location (default is `/feed.xml`). Set to `false` to disable writing this file to the output folder. |
 
 ## Using a different collection of pages
 
