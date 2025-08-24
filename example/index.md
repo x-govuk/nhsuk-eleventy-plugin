@@ -13,10 +13,10 @@ groups:
   - columns: 3
     secondary: true
     items:
-      - text: Realistic
+      - title: Realistic
         description: Create interactive prototypes that behave like the real thing, across devices, using components from the design system.
-      - text: Accessible
+      - title: Accessible
         description: Test designs with people who use assistive technology, including screen readers, voice control and screen magnification.
-      - text: Free and open source
+      - title: Free and open source
         description: No licence fees to pay. No need for procurement. Use with common free tools like Git and GitHub for collaboration.
 ---
