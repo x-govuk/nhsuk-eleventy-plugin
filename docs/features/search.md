@@ -7,6 +7,7 @@ The NHS.UK Eleventy Plugin makes it easy to add search to your website.
 
 It works by creating a search index each time you build your site. This JSON file contains the title, description and URL of every page, plus a list of words that appear on that page.
 
+> [!NOTE]
 > View an [example search index (JSON, opens in a tab)](/example/search-index.json){target=example}
 
 This search index provides suggestions when users type in the search box in your site’s header.

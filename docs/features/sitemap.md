@@ -7,6 +7,7 @@ A sitemap is a page that lists all the pages on your site. It helps users find c
 
 The NHS.UK Eleventy Plugin creates a sitemap page that automatically lists all your site's pages in a clear, organised way.
 
+> [!NOTE]
 > View an [example sitemap (opens in a tab)](/example/sitemap){target=example}
 
 ## Configure the sitemap page

@@ -5,6 +5,7 @@ description: Allow readers to browse content by using tags to categorise posts.
 
 The NHS.UK Eleventy Plugin lets you use tags to categorise pages. Each post can display its list of tags, which link to a page that lists other posts with the same tag. Follow these instructions to enable this feature.
 
+> [!NOTE]
 > View an [example tag list page (opens in a tab)](/example/tags){target=example} and an [example tag page (opens in a tab)](/example/tags/content){target=example}
 
 ## Configure tag pages

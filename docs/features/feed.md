@@ -9,6 +9,7 @@ The NHS.UK Eleventy Plugin creates a feed using the [XML Atom format](<https://e
 
 {% set url = options.url | replace("https://", "feed://") %}
 
+> [!NOTE]
 > View an [example RSS feed (may open in a feed reader)]({{ "/example/feed.xml" | htmlBaseUrl(url) }})
 
 ## Configure the RSS feed
