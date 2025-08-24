@@ -15,10 +15,6 @@
 
   {{ appProseScope(content) if content }}
 
-  {{ appRelated({
-    sections: related.sections or [related]
-  }) if related.sections or related.items | length > 0 }}
-
   {% if showPagination %}
     {% set previous = collections.navigation | eleventyNavigation(sectionKey or options.homeKey) | getPreviousNavigationItem(page.url) %}
     {% set next = collections.navigation | eleventyNavigation(sectionKey or options.homeKey) | getNextNavigationItem(page.url) %}
@@ -30,4 +26,6 @@
       nextPage: next.title if next
     }) }}
   {% endif %}
+
+  {{ appRelated(related) if related }}
 {% endblock %}

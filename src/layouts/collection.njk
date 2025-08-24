@@ -34,7 +34,5 @@
     nextPage: pagination.page.next | length + " items"
   }) if pagination.pages.length > 1 }}
 
-  {{ appRelated({
-    sections: related.sections or [related]
-  }) if related.sections or related.items | length > 0 }}
+  {{ appRelated(related) if related }}
 {% endblock %}
