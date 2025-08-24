@@ -14,34 +14,11 @@ To enable tag pages on your site, set `templates.tags` to `true` in your plugin 
 
 Or, you can customise tag pages by using these options:
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
-{{ govukTable({
-  caption: "Feature options",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "title" },
-      { text: "string" },
-      { text: "Sets the tag list title (default is `Tags`)" | markdown }
-    ],
-    [
-      { text: "tagTitle" },
-      { text: "string" },
-      { text: "Sets the title for individual tag pages (default is `Posts tagged ‘{{ tag }}’`)" | markdown }
-    ],
-    [
-      { text: "permalink" },
-      { text: "string" },
-      { text: "Sets the folder name and location (default is `/tags`). Set to `false` to disable writing files to the output folder." | markdown }
-]
-]
-}) }}
+| Name      | Type   | Description                                                                                                           |
+| --------- | ------ | --------------------------------------------------------------------------------------------------------------------- |
+| title     | string | Sets the tag list title (default is `Tags`)                                                                           |
+| tagTitle  | string | Sets the title for individual tag pages (default is `Posts tagged ‘{% raw %}{{ tag }}{% endraw %}’`)                  |
+| permalink | string | Sets the folder name and location (default is `/tags`). Set to `false` to disable writing files to the output folder. |
 
 ## Change how tag pages look
 

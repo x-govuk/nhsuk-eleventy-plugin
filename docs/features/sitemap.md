@@ -16,29 +16,10 @@ The plugin enables the sitemap page by default (it is linked to from the 404 pag
 
 Or, you can customise the page by using these options:
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
-{{ govukTable({
-  caption: "Feature options",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "title" },
-      { text: "string" },
-      { text: "Sets the page title (default is `Sitemap`)" | markdown }
-    ],
-    [
-      { text: "permalink" },
-      { text: "string" },
-      { text: "Sets the file name and location (default is `/sitemap/`). Set to `false` to disable writing this file to the output folder." | markdown }
-    ]
-  ]
-}) }}
+| Name      | Type   | Description                                                                                                                 |
+| --------- | ------ | --------------------------------------------------------------------------------------------------------------------------- |
+| title     | string | Sets the page title (default is `Sitemap`)                                                                                  |
+| permalink | string | Sets the file name and location (default is `/sitemap/`). Set to `false` to disable writing this file to the output folder. |
 
 ## Change how the sitemap page looks
 

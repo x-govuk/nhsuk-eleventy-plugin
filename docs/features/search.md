@@ -18,24 +18,9 @@ To enable search indexing, set `templates.searchIndex` to `true` in your plugin 
 
 Or, you can customise the search index by using these options:
 
-{% from "govuk/components/table/macro.njk" import govukTable %}
-{{ govukTable({
-  caption: "Feature options",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    { text: "Name" },
-    { text: "Type" },
-    { text: "Description" }
-  ],
-  rows: [
-    [
-      { text: "permalink" },
-      { text: "string" },
-      { text: "Sets the file name and location (default is `/search-index.json`). Set to `false` to disable writing this file to the output folder." | markdown }
-    ]
-  ]
-}) }}
+| Name      | Type   | Description                                                                                                                          |
+| --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| permalink | string | Sets the file name and location (default is `/search-index.json`). Set to `false` to disable writing this file to the output folder. |
 
 By adding a search index, the search input will automatically appear in the header.
 
