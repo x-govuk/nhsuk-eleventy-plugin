@@ -26,9 +26,7 @@
 
       {{ appProseScope(content) if content }}
 
-      {{ appRelated({
-        sections: related.sections or [related]
-      }) if related.sections or related.items | length > 0 }}
+      {{ appRelated(related) if related }}
     </div>
   </main>
 {% endblock %}

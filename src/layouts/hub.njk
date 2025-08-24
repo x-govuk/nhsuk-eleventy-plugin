@@ -27,7 +27,5 @@
     {{ appCardGroup(group) if group.items }}
   {% endfor %}
 
-  {{ appRelated({
-    sections: related.sections or [related]
-  }) if related.sections or related.items | length > 0 }}
+  {{ appRelated(related) if related }}
 {% endblock %}
