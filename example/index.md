@@ -11,7 +11,7 @@ image:
   src: /assets/product-illustration.svg
 groups:
   - columns: 3
-    secondary: true
+    type: "secondary"
     items:
       - title: Realistic
         description: Create interactive prototypes that behave like the real thing, across devices, using components from the design system.
