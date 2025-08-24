@@ -63,8 +63,6 @@ The rendered output looks like this:
 
 > No society can legitimately call itself civilised if a sick person is denied aid because of lack of means..
 
-Do not use blockquotes to emphasis context. Use [alerts](#alerts) instead.
-
 ### Blockquotes with multiple paragraphs
 
 Blockquotes can contain multiple paragraphs. Add a `>` on the blank lines between the paragraphs.
@@ -80,22 +78,6 @@ The rendered output looks like this:
 > No society can legitimately call itself civilised if a sick person is denied aid because of lack of means..
 >
 > Society becomes more wholesome, more serene, and spiritually healthier, if it knows that its citizens have at the back of their consciousness the knowledge that not only themselves, but all their fellows, have access, when ill, to the best that medical care can provide.
-
-### Nested blockquotes
-
-To nest blockquotes, add a `>>` in front of the paragraph you want to nest.
-
-```markdown
-> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means..
->
-> > Society becomes more wholesome, more serene, and spiritually healthier, if it knows that its citizens have at the back of their consciousness the knowledge that not only themselves, but all their fellows, have access, when ill, to the best that medical care can provide.
-```
-
-The rendered output looks like this:
-
-> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means..
->
-> > Society becomes more wholesome, more serene, and spiritually healthier, if it knows that its citizens have at the back of their consciousness the knowledge that not only themselves, but all their fellows, have access, when ill, to the best that medical care can provide.
 
 ## Alerts
 
