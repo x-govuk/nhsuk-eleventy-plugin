@@ -1,11 +1,5 @@
 {% extends "layouts/base.njk" %}
 
-{% block beforeContent %}
-  {{ nhsukBreadcrumb({
-    items: breadcrumbItems
-  }) if showBreadcrumbs }}
-{% endblock %}
-
 {% block content %}
   {{ appHeading({
     caption: caption,
