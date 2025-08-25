@@ -22,16 +22,16 @@ Page content
 
 In addition to [common front matter options](/layouts/front-matter-options), this layout also accepts the following options:
 
-| Name             | Type   | Description                                                                     |
-| ---------------- | ------ | ------------------------------------------------------------------------------- |
-| headingClasses   | string | Classes to use for heading in masthead                                          |
-| startButton      | object | Start button. Appears below the title and any description.                      |
-| startButton.text | string | Text for the start button (default is `Get started`)                            |
-| startButton.href | string | URL or page the start button should link to                                     |
-| image            | object | Product image. Appears to the right of the page title, and is hidden on mobile. |
-| image.src        | string | Path to product image.                                                          |
-| image.alt        | string | Alternative text for product image.                                             |
-| groups           | array  | See [options for card groups](#options-for-card-groups-array-objects)           |
+| Name             | Type   | Description                                                                    |
+| ---------------- | ------ | ------------------------------------------------------------------------------ |
+| headingClasses   | string | Classes to use for heading in masthead                                         |
+| startButton      | object | Start button. Appears below the title and any description.                     |
+| startButton.text | string | Text for the start button (default is `Get started`)                           |
+| startButton.href | string | URL or page the start button should link to                                    |
+| image            | object | Product image. Appears to the right of the page title, and is hidden on mobile |
+| image.src        | string | Path to product image                                                          |
+| image.alt        | string | Alternative text for product image                                             |
+| groups           | array  | See [options for card groups](#options-for-card-groups-array-objects)          |
 
 ## Options for card `groups` array objects
 
