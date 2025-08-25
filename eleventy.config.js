@@ -21,6 +21,7 @@ export default function (eleventyConfig) {
     themeColor: '#2288aa',
     titleSuffix: serviceName,
     showBreadcrumbs: false,
+    headingPermalinks: true,
     url:
       process.env.GITHUB_ACTIONS &&
       'https://x-govuk.github.io/nhsuk-eleventy-plugin/',
