@@ -454,22 +454,22 @@ To add an image, add an exclamation mark (`!`), followed by alternative text in 
 The rendered output looks like this:
 
 ```markdown
-![The NHS logo above the words nhs.uk](/assets/logos/open-graph.png "The NHS.UK logo")
+![Woman looking at the NHS website on her phone.](/assets/post-image.jpg 'We want to make sure the  NHS website is easy to use.')
 ```
 
-![The NHS logo above the words nhs.uk](/assets/logos/open-graph.png 'The NHS.UK logo')
+![Woman looking at the NHS website on her phone.](/assets/post-image.jpg 'We want to make sure the  NHS website is easy to use.')
 
 ### Linking images
 
 To add a link to an image, enclose the Markdown for the image in brackets, and then add the link in parentheses.
 
 ```markdown
-[![Visit NHS.UK.](/assets/logos/open-graph.png)](https://www.nhs.uk)
+[![Visit NHS.UK.](/assets/images/nhsuk-opengraph-image.png)](https://www.nhs.uk)
 ```
 
 The rendered output looks like this:
 
-[![Visit NHS.UK.](/assets/logos/open-graph.png)](https://www.nhs.uk)
+[![Visit NHS.UK.](/assets/images/nhsuk-opengraph-image.png)](https://www.nhs.uk)
 
 ## Tables
 
