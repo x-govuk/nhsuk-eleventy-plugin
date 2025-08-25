@@ -22,7 +22,9 @@ Or, you can customise the search index by using these options:
 | --------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------ |
 | permalink | string | Sets the file name and location (default is `/search-index.json`). Set to `false` to disable writing this file to the output folder. |
 
-By adding a search index, the search input will automatically appear in the header.
+By adding a search index, a search bar will automatically appear in the header.
+
+## Add a fallback search method
 
 As the site search requires JavaScript, you can add a fallback search method for users who cannot use JavaScript:
 
@@ -39,3 +41,5 @@ export default function(eleventyConfig) {
   })
 }
 ```
+
+You can find a full list of [options for header component](https://service-manual.nhs.uk/design-system/components/header), including for the search bar, on the NHS digital service manual website.
