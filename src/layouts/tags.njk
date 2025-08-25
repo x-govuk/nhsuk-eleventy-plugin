@@ -16,7 +16,7 @@
   <ul class="nhsuk-list nhsuk-list--bullet">
     {% for tag in collections.tags %}
     <li>
-      <a class="nhsuk-link" href="/tags/{{ tag | slug }}">{{ tag }}</a>
+      <a class="nhsuk-link" href="{{ tag | slug }}">{{ tag }}</a>
       ({{ collections[tag] | length }})
     </li>
     {% endfor %}
