@@ -32,3 +32,4 @@ In addition to [common front matter options](/layouts/front-matter-options), thi
 | pagination.data    | string  | Pages to list, typically a reference to a [collection](https://www.11ty.dev/docs/collections/)                                                             |
 | pagination.size    | integer | The number of items to list                                                                                                                                |
 | pagination.reverse | boolean | Set to `true` to list the items in reverse date order                                                                                                      |
+| paginationHeading  | string  | Heading for the list of paginated pages                                                                                                                    |
