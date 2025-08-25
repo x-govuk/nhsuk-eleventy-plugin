@@ -43,5 +43,6 @@ export default function(eleventyConfig) {
 | templates.searchIndex | object or boolean | Configuration for the [search index template](/features/search) (default is `false`)                                                                                         |
 | templates.sitemap     | object or boolean | Configuration for the [sitemap template](/features/sitemap) (default is `true`)                                                                                              |
 | templates.tag         | object or boolean | Configuration for the [tag templates](/features/tags) (default is `false`)                                                                                                   |
+| themeColor            | string            | Browser theme colour. Must be a hex value (default is `#005eb8`)                                                                                                             |
 | titleSuffix           | string            | Value to show at the end of the document title (default is `NHS`)                                                                                                            |
 | url                   | string            | The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data.                                                                        |
