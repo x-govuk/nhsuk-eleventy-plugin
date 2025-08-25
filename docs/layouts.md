@@ -26,14 +26,14 @@ The plugin also provides the following layouts used by features. It’s unlikely
 
 Layouts provided by this plugin can be overridden, or used as a basis for your own, by using Nunjuck’s [template inheritance](https://mozilla.github.io/nunjucks/templating.html#template-inheritance) feature.
 
-For example, to show a notification banner at the top of each page that uses the Page layout, add a file named `_includes/page.njk` with the following content:
+For example, to show a message at the top of each page that uses the page layout, add a file named `_includes/page.njk` with the following content:
 
 ```njk
-{% raw %}{# Plugin layouts can be loaded from "layouts" #}
+{% raw %}{# Extend a plugin layout #}
 {% extends "layouts/page.njk" %}
 
-{# Load any GOV.UK Frontend components #}
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{# Load any NHS.UK frontend components #}
+{% from "nhsuk/components/inset-text/macro.njk" import insetText %}
 
 {# Override the `content` block #}
 {% block content %}
@@ -42,13 +42,17 @@ For example, to show a notification banner at the top of each page that uses the
     description: description
   }) }}
 
-  {{ appProseScope(content) if content }}
-
-  {# Templates can include front matter data #}
   {% if reviewed and reviewAgain %}
-    <p>This page was last reviewed on {{ reviewed | nhsukDate }}.
-    It needs to be reviewed again on {{ reviewAgain | nhsukDate }}.</p>
+  {% call insetText() %}
+    <p class="nhsuk-body">
+      {# Use front matter data and call plugin filters #}
+      This page was last reviewed on {{ reviewed | nhsukDate }}.<br>
+      It needs to be reviewed again on {{ reviewAgain | nhsukDate }}.
+    </p>
+  {% endcall %}
   {% endif %}
+
+  {{ appProseScope(content) if content }}
 {% endblock %}{% endraw %}
 ```
 
