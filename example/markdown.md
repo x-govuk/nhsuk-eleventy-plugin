@@ -56,28 +56,42 @@ The rendered output of all 3 looks identical:
 To create a blockquote, add a `>` in front of a paragraph.
 
 ```markdown
-> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means..
+> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means.
 ```
 
 The rendered output looks like this:
 
-> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means..
+> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means.
 
 ### Blockquotes with multiple paragraphs
 
 Blockquotes can contain multiple paragraphs. Add a `>` on the blank lines between the paragraphs.
 
 ```markdown
-> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means..
+> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means.
 >
 > Society becomes more wholesome, more serene, and spiritually healthier, if it knows that its citizens have at the back of their consciousness the knowledge that not only themselves, but all their fellows, have access, when ill, to the best that medical care can provide.
 ```
 
 The rendered output looks like this:
 
-> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means..
+> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means.
 >
 > Society becomes more wholesome, more serene, and spiritually healthier, if it knows that its citizens have at the back of their consciousness the knowledge that not only themselves, but all their fellows, have access, when ill, to the best that medical care can provide.
+
+### Blockquotes with attribution
+
+You can attribute a quote to its author by adding two hyphens (`--`) before the attribution you want to add.
+
+```markdown
+> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means.
+> -- Nye Bevan, 1952
+```
+
+The rendered output looks like this:
+
+> No society can legitimately call itself civilised if a sick person is denied aid because of lack of means.
+> -- Nye Bevan, 1952
 
 ## Alerts
 
