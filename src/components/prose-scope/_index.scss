@@ -33,9 +33,11 @@
     }
 
     [class^="nhsuk-heading"][tabindex] .nhsuk-link {
-      text-decoration: none;
-
       @include nhsuk-link-style-text;
+
+      & {
+        text-decoration: none;
+      }
 
       &:hover::after,
       :target &::after {
