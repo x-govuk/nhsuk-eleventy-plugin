@@ -2,9 +2,6 @@
 
 Build documentation websites using Markdown and NHS.UK styles.
 
-> [!CAUTION]
-> Work in progress. Some parts may not work yet.
-
 ## Requirements
 
 - [Node.js](https://nodejs.org) v22 or later
@@ -12,7 +9,7 @@ Build documentation websites using Markdown and NHS.UK styles.
 
 ## Installation
 
-~~`npm install @x-govuk/nhsuk-eleventy-plugin`~~
+`npm install @x-govuk/nhsuk-eleventy-plugin`
 
 ## Usage
 
@@ -26,7 +23,7 @@ export default function(eleventyConfig) {
 }
 ```
 
-Learn more about how to [get started](https://x-govuk.github.io/nhsuk-eleventy-plugin/get-started/) and which [options you can provide](https://x-govuk.github.io/nhsuk-eleventy-plugin/options/).
+Learn more about how to [get started](https://x-govuk.github.io/nhsuk-eleventy-plugin/get-started/) and which [options you can provide](https://x-govuk.github.io/nhsuk-eleventy-plugin/get-started/options/).
 
 ## Releasing a new version
 
