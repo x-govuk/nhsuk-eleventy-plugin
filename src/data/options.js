@@ -8,10 +8,11 @@ import deepmerge from 'deepmerge'
 const defaults = {
   homeKey: 'Home',
   icons: {
-    mask: '/assets/favicons/favicon.svg',
-    shortcut: '/assets/favicons/favicon.ico',
-    touch: '/assets/favicons/apple-touch-icon.png'
+    mask: '/assets/images/nhsuk-icon-mask.svg',
+    shortcut: '/assets/images/favicon.ico',
+    touch: '/assets/images/nhsuk-icon-180.png'
   },
+  opengraphImageUrl: '/assets/images/nhsuk-opengraph-image.png',
   stylesheets: [],
   titleSuffix: 'NHS',
   url: false,
