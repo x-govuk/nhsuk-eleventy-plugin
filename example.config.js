@@ -63,7 +63,9 @@ export default function (eleventyConfig) {
       }
     },
     templates: {
-      feed: true,
+      feed: {
+        title: 'Example feed'
+      },
       searchIndex: true,
       sitemap: true,
       tags: true
