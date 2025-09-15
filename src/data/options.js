@@ -12,6 +12,10 @@ const defaults = {
     shortcut: '/assets/images/favicon.ico',
     touch: '/assets/images/nhsuk-icon-180.png'
   },
+  markdown: {
+    headingPermalinks: false,
+    headingsStartWith: 'xl'
+  },
   opengraphImageUrl: '/assets/images/nhsuk-opengraph-image.png',
   stylesheets: [],
   titleSuffix: 'NHS',
@@ -44,6 +48,18 @@ export function defaultPluginOptions(options, pathPrefix) {
   if (options.templates?.feed) {
     // Add _feedPath to enable feed to be linked to from page head
     options._feedPath = options.templates?.feed?.permalink || '/feed.xml'
+  }
+
+  // Show message if using deprecated headingPermalinks option
+  if (options?.headingPermalinks) {
+    console.warn(
+      'The `headingPermalinks` option is deprecated and will be removed in a future version. Use `markdown.headingPermalinks` option instead.'
+    )
+
+    options.markdown = {
+      headingPermalinks: options.headingPermalinks,
+      ...options.markdown
+    }
   }
 
   return deepmerge(defaults, options)

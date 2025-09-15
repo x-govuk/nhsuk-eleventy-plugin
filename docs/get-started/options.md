@@ -28,12 +28,12 @@ export default function(eleventyConfig) {
 | --------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | footer                | object            | Options for [footer component](https://service-manual.nhs.uk/design-system/components/footer)                                                                                |
 | header                | object            | Options for [header component](https://service-manual.nhs.uk/design-system/components/header)                                                                                |
-| headingPermalinks     | boolean           | Add links to headings, making it easier to share sections of a page (default is `false`)                                                                                     |
 | homeKey               | string            | First item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/) (default is `Home`) |
 | icons                 | object            | Override NHS.UK site icons                                                                                                                                                   |
 | icons.mask            | string or boolean | Override NHS.UK SVG mask icon. Use `false` to not include a mask icon.                                                                                                       |
 | icons.shortcut        | string or boolean | Override NHS.UK favicon. Use `false` to not include a favicon.                                                                                                               |
 | icons.touch           | string or boolean | Override NHS.UK touch icon. Use `false` to not include a touch icon.                                                                                                         |
+| markdown              | object            | Options for [Markdown](#options-for-markdown)                                                                                                                                |
 | opengraphImageUrl     | string            | URL for default Open Graph share image                                                                                                                                       |
 | showBreadcrumbs       | boolean           | Show breadcrumb navigation (default is `true` for nested pages)                                                                                                              |
 | stylesheets           | array             | Stylesheets to load instead of default application styles                                                                                                                    |
@@ -46,3 +46,12 @@ export default function(eleventyConfig) {
 | themeColor            | string            | Browser theme colour. Must be a hex value (default is `#005eb8`)                                                                                                             |
 | titleSuffix           | string            | Value to show at the end of the document title (default is `NHS`)                                                                                                            |
 | url                   | string            | The URL of your website. Optional, but required to have valid canonical URLs in Open Graph meta data.                                                                        |
+
+### Options for Markdown
+
+Alongside [options for markdown-it](https://markdown-it.github.io/markdown-it/#MarkdownIt.new), you can also set the following options:
+
+| Name              | Type    | Description                                                                              |
+| ----------------- | ------- | ---------------------------------------------------------------------------------------- |
+| headingPermalinks | boolean | Add links to headings, making it easier to share sections of a page (default is `false`) |
+| headingsStartWith | string  | Heading size to use for the top-level heading, `xl` or `l` (default is `xl`)             |
