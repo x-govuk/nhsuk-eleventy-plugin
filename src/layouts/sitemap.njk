@@ -19,7 +19,7 @@
       {% endif %}
       {{ collections.sitemap | eleventyNavigation(item.key) | eleventyNavigationToHtml({
         listElement: "ol"
-      }) | safe }}
+      }) | smart | safe }}
     </nav>
   {% endfor %}
 {% endblock %}
