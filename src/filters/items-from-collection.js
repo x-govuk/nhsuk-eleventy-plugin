@@ -3,6 +3,7 @@ import {
   markdown,
   nhsukDate,
   sliceFromCollection,
+  sortCollection,
   smart
 } from './index.js'
 
@@ -50,6 +51,8 @@ function getDescriptionHtml(item) {
  */
 export function itemsFromCollection(array, n) {
   if (isCollectionData(array)) {
+    array = sortCollection(array, true)
+
     array = array.map((item) => {
       return {
         href: item.url,

@@ -13,6 +13,7 @@ export {
   noOrphans,
   pretty,
   sliceFromCollection,
+  sortCollection,
   smart,
   tokenize
 } from '@x-govuk/govuk-eleventy-plugin/filters'
