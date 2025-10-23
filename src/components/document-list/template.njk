@@ -4,10 +4,21 @@
 {% if params.items.length > 0 %}
   <ol class="nhsuk-grid-row nhsuk-card-group{%- if params.classes %} {{ params.classes }}{% endif %}">
   {% for item in params.items | itemsFromCollection %}
+
+    {% if item.caption %}
+      {% set headingHtml %}
+        <div class="nhsuk-caption-m">{{ item.caption }}</div>
+        <h2 class="nhsuk-card__heading {{ params.headingClasses or "nhsuk-u-font-size-22" + (" nhsuk-u-margin-bottom-2" if item.descriptionHtml else "") }}">
+          <a class="nhsuk-card__link" href="{{ item.href }}">{{ item.heading }}</a>
+        </h2>
+      {% endset %}
+    {% endif %}
+
     <li class="nhsuk-grid-column-full nhsuk-card-group__item">
       {{ nhsukCard({
         secondary: true,
-        heading: item.heading,
+        heading: item.heading if not item.caption,
+        headingHtml: headingHtml if item.caption,
         headingClasses: params.headingClasses or "nhsuk-u-font-size-22" + (" nhsuk-u-margin-bottom-2" if item.descriptionHtml else ""),
         headingLevel: params.headingLevel or 2,
         href: item.href,
