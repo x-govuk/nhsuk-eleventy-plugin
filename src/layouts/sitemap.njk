@@ -9,7 +9,7 @@
 
   {{ appProseScope(content) if content }}
 
-  {% for item in collections.sitemap | eleventyNavigation(options.homeKey) %}
+  {% for item in collections.sitemap | sortCollection(true) | eleventyNavigation(options.homeKey) %}
     <nav class="nhsuk-contents-list">
       <h2 class="nhsuk-heading-m nhsuk-u-margin-bottom-2">
         <a class="nhsuk-link" href="{{ item.url | canonicalUrl | pretty }}">{{ item.title | smart }}</a>
