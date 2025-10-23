@@ -27,11 +27,13 @@
   }) }}
 
   {{ nhsukPagination({
-    classes: "nhsuk-u-reading-width",
-    previousUrl: pagination.href.previous,
-    previousPage: pagination.page.previous | length + " items",
-    nextUrl: pagination.href.next,
-    nextPage: pagination.page.next | length + " items"
+    previous: {
+      href: pagination.href.previous
+    },
+    next: {
+      href: pagination.href.next
+    },
+    items: pagination | itemsFromPagination
   }) if pagination.pages.length > 1 }}
 
   {{ appRelated(related) if related }}
