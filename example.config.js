@@ -51,7 +51,6 @@ export default function (eleventyConfig) {
         ]
       }
     },
-    headingPermalinks: true,
     footer: {
       copyright: { text: '© X-GOVUK' },
       meta: {
@@ -62,6 +61,9 @@ export default function (eleventyConfig) {
           }
         ]
       }
+    },
+    markdown: {
+      headingPermalinks: true
     },
     templates: {
       feed: {
