@@ -43,6 +43,7 @@ export function md(markdownOptions = {}) {
     .use(markdownItGovuk, {
       brand: 'nhsuk',
       calvert: true,
+      govspeak: ['blockquote'],
       headingsStartWith: markdownOptions.headingsStartWith
     })
     .use(markdownItAbbr)
