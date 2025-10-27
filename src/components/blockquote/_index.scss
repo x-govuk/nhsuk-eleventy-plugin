@@ -1,7 +1,10 @@
 @use "../../vendor/nhsuk-frontend" as *;
 
 @include nhsuk-exports("nhsuk-eleventy-plugin/components/blockquote") {
-  .app-blockquote {
+  // Govspeak blockquote
+  // https://components.publishing.service.gov.uk/component-guide/govspeak/blockquote
+  // https://github.com/alphagov/govuk_publishing_components/blob/main/app/assets/stylesheets/govuk_publishing_components/components/govspeak/_typography.scss
+  blockquote[data-govspeak="blockquote"] {
     margin: 0 0 nhsuk-spacing(4);
     padding: 0 0 0 nhsuk-spacing(6);
 
