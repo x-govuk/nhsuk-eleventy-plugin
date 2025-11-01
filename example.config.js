@@ -8,7 +8,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(nhsukEleventyPlugin, {
     url:
       process.env.GITHUB_ACTIONS &&
-      'https://x-govuk.org/nhsuk-eleventy-plugin/example/',
+      'https://nhsuk-eleventy-plugin.x-govuk.org/example/',
     header: {
       service: {
         text: 'Layout examples'
@@ -94,8 +94,6 @@ export default function (eleventyConfig) {
       input: 'example',
       output: '_site/example'
     },
-    pathPrefix: process.env.GITHUB_ACTIONS
-      ? '/nhsuk-eleventy-plugin/example/'
-      : '/example/'
+    pathPrefix: '/example/'
   }
 }
