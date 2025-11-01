@@ -3,7 +3,7 @@ import deepmerge from 'deepmerge'
 /**
  * Default option values
  *
- * @see {@link https://x-govuk.org/nhsuk-eleventy-plugin/options/}
+ * @see {@link https://nhsuk-eleventy-plugin.x-govuk.org/options/}
  */
 const defaults = {
   homeKey: 'Home',
