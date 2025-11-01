@@ -28,4 +28,4 @@ You can [see a demo site (opens in a new tab)](/example){target=example} built u
 
 ## Want to build a site using GOV.UK styles?
 
-This plugin is based on [GOV.UK Eleventy Plugin](https://x-govuk.github.io/govuk-eleventy-plugin/). Use that plugin to build websites that use GOV.UK components and styles.
+This plugin is based on [GOV.UK Eleventy Plugin](https://x-govuk.org/govuk-eleventy-plugin/). Use that plugin to build websites that use GOV.UK components and styles.
