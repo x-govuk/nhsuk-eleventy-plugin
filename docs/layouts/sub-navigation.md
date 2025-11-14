@@ -9,12 +9,17 @@ theme: Content presentation
 
 This layout offers a page with sub navigation, appearing to the left of content on wider viewports, and above on narrower ones.
 
-To use this layout, make `sub-navigation` the value for a page’s `layout` key:
+To use this layout, make `sub-navigation` the value for a page’s `layout` key.
+
+The sub-navigation will show all pages beneath the `sectionKey` that you specify.
 
 ```yaml
 ---
 layout: sub-navigation
-title: Page title
+sectionKey: Guide
+eleventyNavigation:
+  parent: Guide
+title: Introduction
 ---
 
 Page content
