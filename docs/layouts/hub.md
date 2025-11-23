@@ -18,13 +18,15 @@ title: Page title
 Page content
 ```
 
+## Front matter options
+
 In addition to [common front matter options](/layouts/front-matter-options), this layout accepts the following options:
 
 | Name   | Type  | Description                                                           |
 | ------ | ----- | --------------------------------------------------------------------- |
 | groups | array | See [options for card groups](#options-for-card-groups-array-objects) |
 
-## Options for card `groups` array objects
+### Options for card `groups` array objects
 
 | Name        | Type    | Description                                                                                                                                                                           |
 | ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -35,7 +37,7 @@ In addition to [common front matter options](/layouts/front-matter-options), thi
 | limit       | integer | Limit of items to show within card group                                                                                                                                              |
 | type        | string  | Type of card to use within card group. Optional, choose from `primary` (adds chevron) or `secondary` (removes background)                                                             |
 
-## Options for card group `items` array objects
+### Options for card group `items` array objects
 
 | Name        | Type   | Description                     |
 | ----------- | ------ | ------------------------------- |
