@@ -18,22 +18,26 @@ title: Page title
 Page content
 ```
 
-## Previous and next pages
+## Showing previous and next pages
 
-If you have a series of pages, you can add link them together by adding previous and next links to the bottom of the page.
+To link pages in a series, add `showPagination: true` to the page’s front matter options. This adds previous and next links to the bottom of the page.
 
-To do this, add `showPagination: true` to the page metadata, and use the `order` value to set the order of the pages:
+Pages get ordered by `title`. To set a specific order, use the `order` front matter option:
 
 ```yaml
 ---
 layout: page
-title: Page title
-showPagination: true
+title: Second page title
 order: 2
 ---
 
 This is the second page
 ```
 
+## Front matter options
 
-You can also use the [common front matter options](/layouts/front-matter-options).
+In addition to [common front matter options](/layouts/front-matter-options), this layout also accepts the following options:
+
+| Name           | Type    | Description                                                 |
+| -------------- | ------- | ----------------------------------------------------------- |
+| showPagination | boolean | Show previous/next pagination links at the foot of the page |
