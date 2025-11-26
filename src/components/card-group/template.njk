@@ -14,7 +14,7 @@
       primary: params.type == "primary",
       secondary: params.type == "secondary",
       heading: item.heading,
-      headingClasses: "nhsuk-u-font-size-22" if params.title else "nhsuk-u-font-size-26" + (" nhsuk-u-margin-bottom-2" if item.descriptionHtml else ""),
+      headingClasses: ("nhsuk-u-font-size-22" if params.title else "nhsuk-u-font-size-26") + (" nhsuk-u-margin-bottom-2" if item.descriptionHtml else ""),
       headingLevel: 3 if params.title else 2,
       href: item.href,
       descriptionHtml: item.descriptionHtml,
