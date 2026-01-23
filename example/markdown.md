@@ -129,6 +129,18 @@ The rendered output looks like this:
 > [!NOTE] Reporting side effects
 > You can report any suspected side effect to the [UK safety scheme](https://yellowcard.mhra.gov.uk/).
 
+#### Information callouts
+
+Govspeak’s [information callout](https://components.publishing.service.gov.uk/component-guide/govspeak/information_callout) syntax is also supported:
+
+```markdown
+^ Highlights information that users should take into account, even when skimming.
+```
+
+The rendered output looks like this:
+
+^ Highlights information that users should take into account, even when skimming.
+
 ### Important, warning and caution alerts
 
 Important, warning and caution alerts are rendered as [warning callouts](https://service-manual.nhs.uk/design-system/components/warning-callout):

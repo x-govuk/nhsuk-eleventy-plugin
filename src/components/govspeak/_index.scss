@@ -1,7 +1,13 @@
 @use "../../vendor/nhsuk-frontend" as *;
 
-@include nhsuk-exports("nhsuk-eleventy-plugin/components/blockquote") {
-  // Govspeak blockquote
+@include nhsuk-exports("nhsuk-eleventy-plugin/components/govspeak") {
+  // Information callout
+  // https://components.publishing.service.gov.uk/component-guide/govspeak/information_callout
+  [data-govspeak="information-callout"] {
+    @extend .nhsuk-inset-text;
+  }
+
+  // Blockquote
   // https://components.publishing.service.gov.uk/component-guide/govspeak/blockquote
   // https://github.com/alphagov/govuk_publishing_components/blob/main/app/assets/stylesheets/govuk_publishing_components/components/govspeak/_typography.scss
   blockquote[data-govspeak="blockquote"] {
