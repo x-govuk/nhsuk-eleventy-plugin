@@ -70,8 +70,7 @@ export function itemsFromCollection(array, n) {
     ...(item.caption && { caption: item.caption }),
     heading: smart(item.title),
     descriptionHtml: getDescriptionHtml(item),
-    ...(item.image && { imgURL: item.image.src }),
-    ...(item.image && { imgALT: item.image.alt })
+    ...(item.image && { image: item.image })
   }))
 
   return sliceFromCollection(array, n)

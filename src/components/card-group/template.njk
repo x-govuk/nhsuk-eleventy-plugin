@@ -18,8 +18,7 @@
       headingLevel: 3 if params.title else 2,
       href: item.href,
       descriptionHtml: item.descriptionHtml,
-      imgALT: item.imgALT,
-      imgURL: item.imgURL
+      image: item.image
     }) | indent(4) }}
   </li>
 {% endfor %}

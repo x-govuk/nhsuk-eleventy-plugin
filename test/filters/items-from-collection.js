@@ -46,8 +46,10 @@ describe('itemsFromNavigation filter', () => {
         heading: 'Two',
         descriptionHtml:
           '<p class="nhsuk-body-s nhsuk-u-margin-bottom-2"><time class="nhsuk-u-secondary-text-colour" datetime="2025-08-03T00:00:00.000Z">3 August 2025</time></p><p class="nhsuk-card__description">Description</p>',
-        imgURL: '/image.jpg',
-        imgALT: 'Alternative text'
+        image: {
+          src: '/image.jpg',
+          alt: 'Alternative text'
+        }
       }
     ])
   })
@@ -90,8 +92,10 @@ describe('itemsFromNavigation filter', () => {
         heading: 'Two',
         descriptionHtml:
           '<p class="nhsuk-body-s nhsuk-u-margin-bottom-2"><time class="nhsuk-u-secondary-text-colour" datetime="2025-08-03T00:00:00.000Z">3 August 2025</time></p><p class="nhsuk-card__description">Description</p>',
-        imgURL: '/image.jpg',
-        imgALT: 'Alternative text'
+        image: {
+          src: '/image.jpg',
+          alt: 'Alternative text'
+        }
       }
     ])
   })
