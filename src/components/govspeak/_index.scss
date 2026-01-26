@@ -4,6 +4,7 @@
   // Information callout
   // https://components.publishing.service.gov.uk/component-guide/govspeak/information_callout
   [data-govspeak="information-callout"] {
+    // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
     @extend .nhsuk-inset-text;
   }
 
