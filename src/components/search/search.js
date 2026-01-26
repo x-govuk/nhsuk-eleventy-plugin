@@ -7,7 +7,7 @@ export class SearchElement extends HTMLElement {
     this.statusMessage = null
     this.$container = this.querySelector('.nhsuk-header__search')
     this.$searchForm = this.querySelector('.nhsuk-header__search-form')
-    this.$searchInput = this.querySelector('.nhsuk-header__search-input')
+    this.$searchInput = this.querySelector('.nhsuk-header__search .nhsuk-input')
     this.searchIndex = null
     this.searchIndexUrl = this.getAttribute('index')
     this.searchResults = []
