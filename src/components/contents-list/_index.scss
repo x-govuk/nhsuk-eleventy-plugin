@@ -6,17 +6,6 @@
     @extend .nhsuk-contents-list__list;
   }
 
-  // Bugfix:
-  // Nested lists need to remove the margin at the bottom,
-  // and add the same margin at the top as is between list items.
-  //
-  // This can be removed when it is fixed within NHS frontend,
-  // see https://github.com/nhsuk/nhsuk-frontend/pull/1854
-  .nhsuk-contents-list ol ol {
-    @include nhsuk-responsive-margin(2, "top");
-    margin-bottom: 0;
-  }
-
   .nhsuk-contents-list li {
     // stylelint-disable-next-line scss/at-extend-no-missing-placeholder
     @extend .nhsuk-contents-list__item;
