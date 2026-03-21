@@ -5,53 +5,7 @@
 $_code-colour: #dd1144;
 
 @include nhsuk-exports("nhsuk-eleventy-plugin/components/code") {
-  .app-code--inline,
-  .app-code--block {
-    font-family: ui-monospace, monospace;
-    -webkit-font-smoothing: auto;
-  }
-
-  .app-code--inline {
-    background-color: nhsuk-colour("white");
-    color: $_code-colour;
-    font-size: 0.875em;
-    padding: 2px nhsuk-spacing(1);
-
-    a & {
-      color: inherit;
-    }
-
-    // Ensure links within inline code blocks receive focus colour
-    a:focus & {
-      background: $nhsuk-focus-colour;
-    }
-  }
-
-  .app-code--block {
-    background-color: nhsuk-colour("white");
-    overflow: auto;
-    padding: nhsuk-spacing(4);
-    scrollbar-color: nhsuk-colour("grey-1") $nhsuk-border-colour;
-    scrollbar-width: thin;
-
-    @include nhsuk-font(16, $line-height: 1.4);
-    @include nhsuk-responsive-margin(4, "bottom");
-
-    + .nhsuk-heading-l {
-      padding-top: nhsuk-spacing(4);
-    }
-
-    + .nhsuk-heading-m,
-    + .nhsuk-heading-s {
-      padding-top: nhsuk-spacing(2);
-    }
-
-    &:focus {
-      box-shadow: 0 0 0 #{$nhsuk-focus-width * 2} $nhsuk-focus-colour;
-      outline: $nhsuk-focus-width solid nhsuk-colour("black");
-    }
-  }
-
+ 
   // Reverse the colour of code that uses shell highlighting
   .app-code__language--shell {
     background-color: nhsuk-colour("black");
@@ -150,4 +104,5 @@ $_code-colour: #dd1144;
   .app-code__strong {
     font-weight: bold;
   }
+
 }
