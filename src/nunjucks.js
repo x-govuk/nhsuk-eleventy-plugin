@@ -6,10 +6,11 @@ import Nunjucks from 'nunjucks'
  * Gets the value at `path` of `object`. If the resolved value is `undefined`,
  * the `defaultValue` is returned in its place.
  *
+ * @template T
  * @param {object} object - Object to query
  * @param {Array|string} keys - Path of the property to get
- * @param {*} defaultValue - Value returned for `undefined` resolved values
- * @returns {*} The resolved value
+ * @param {T} defaultValue - Value returned for `undefined` resolved values
+ * @returns {T} The resolved value
  */
 function getProp(object, keys, defaultValue) {
   keys = Array.isArray(keys) ? keys : keys.split('.')
@@ -25,7 +26,7 @@ function getProp(object, keys, defaultValue) {
  *
  * @see {@link https://mozilla.github.io/nunjucks/api.html#environment}
  * @param {object} eleventyConfig - Eleventy config
- * @returns {Function} Nunjucks environment
+ * @returns {import('nunjucks').Environment} Nunjucks environment
  */
 export function nunjucksConfig(eleventyConfig) {
   const { includes, input, layouts } = eleventyConfig.dir

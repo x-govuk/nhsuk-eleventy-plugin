@@ -1,7 +1,7 @@
 /**
  * Render a figure
  *
- * @param {Function} md - markdown-it instance
+ * @param {import('markdown-it')} md - markdown-it instance
  */
 export function figureRules(md) {
   const { rules } = md.renderer
