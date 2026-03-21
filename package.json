@@ -87,6 +87,11 @@
     "stylelint-config-gds": "^2.0.0",
     "stylelint-order": "^7.0.0"
   },
+  "peerDependencies": {
+    "@sindresorhus/slugify": "^2.2.1",
+    "markdown-it": "^14.1.1",
+    "nunjucks": "^3.2.4"
+  },
   "engines": {
     "node": ">=22"
   },
