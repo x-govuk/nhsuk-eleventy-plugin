@@ -1,7 +1,6 @@
-import highlightJs from 'highlight.js'
+import { highlighter } from 'nhsuk-frontend/lib'
 
-// Use app-code__ prefix to match existing syntax highlighting styles
-highlightJs.configure({ classPrefix: 'app-code__' })
+const hljs = highlighter.highlighter
 
 /**
  * Highlight code using highlight.js
@@ -11,10 +10,10 @@ highlightJs.configure({ classPrefix: 'app-code__' })
  * @returns {string} Highlighted code HTML
  */
 export function highlightCode(string, language) {
-  if (language && highlightJs.getLanguage(language)) {
-    return highlightJs.highlight(string, { language }).value
+  if (language && hljs.getLanguage(language)) {
+    return hljs.highlight(string, { language }).value
   }
-  return highlightJs.highlightAuto(string).value
+  return hljs.highlightAuto(string).value
 }
 
 /**
