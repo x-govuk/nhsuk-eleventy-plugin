@@ -11,7 +11,7 @@ highlightJs.configure({ classPrefix: 'app-code__' })
  * @returns {string} Highlighted code HTML
  */
 export function highlightCode(string, language) {
-    if (language && highlightJs.getLanguage(language)) {
+  if (language && highlightJs.getLanguage(language)) {
     return highlightJs.highlight(string, { language }).value
   }
   if (language) {

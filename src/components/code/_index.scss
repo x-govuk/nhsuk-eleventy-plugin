@@ -5,7 +5,6 @@
 $_code-colour: #dd1144;
 
 @include nhsuk-exports("nhsuk-eleventy-plugin/components/code") {
- 
   // Reverse the colour of code that uses shell highlighting
   .app-code__language--shell {
     background-color: nhsuk-colour("black");
@@ -104,5 +103,4 @@ $_code-colour: #dd1144;
   .app-code__strong {
     font-weight: bold;
   }
-
 }
