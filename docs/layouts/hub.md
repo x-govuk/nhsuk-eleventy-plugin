@@ -28,14 +28,15 @@ In addition to [common front matter options](/layouts/front-matter-options), thi
 
 ### Options for card `groups` array objects
 
-| Name        | Type    | Description                                                                                                                                                                           |
-| ----------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| title       | string  | Card group title                                                                                                                                                                      |
-| caption     | string  | Caption that sits above the card group title                                                                                                                                          |
-| description | string  | Card group description                                                                                                                                                                |
-| items       | array   | Card group items. See [options for card group items](#options-for-card-group-items-array-objects). Can also be a reference to a [collection](https://www.11ty.dev/docs/collections/). |
-| limit       | integer | Limit of items to show within card group                                                                                                                                              |
-| type        | string  | Type of card to use within card group. Optional, choose from `primary` (adds chevron) or `secondary` (removes background)                                                             |
+| Name                  | Type    | Description                                                                                                                                                                           |
+| --------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title                 | string  | Card group title                                                                                                                                                                      |
+| caption               | string  | Caption that sits above the card group title                                                                                                                                          |
+| description           | string  | Card group description                                                                                                                                                                |
+| items                 | array   | Card group items. See [options for card group items](#options-for-card-group-items-array-objects). Can also be a reference to a [collection](https://www.11ty.dev/docs/collections/). |
+| limit                 | integer | Limit of items to show within card group                                                                                                                                              |
+| ~~type~~ (deprecated) | string  | Type of card to use within card group. Optional, choose from `primary` (adds chevron) or `secondary` (removes background)                                                             |
+| variant               | string  | Card variant to use within card group. Optional, choose from `primary` (adds chevron) or `secondary` (removes background)                                                             |
 
 ### Options for card group `items` array objects
 
