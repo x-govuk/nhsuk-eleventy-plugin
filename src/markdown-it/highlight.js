@@ -1,6 +1,4 @@
-import { highlighter } from 'nhsuk-frontend/lib'
-
-const hljs = highlighter.highlighter
+import { highlighter } from 'nhsuk-frontend/dist/nhsuk/lib/highlighter/index.mjs'
 
 /**
  * Highlight code using highlight.js
@@ -10,10 +8,10 @@ const hljs = highlighter.highlighter
  * @returns {string} Highlighted code HTML
  */
 export function highlightCode(string, language) {
-  if (language && hljs.getLanguage(language)) {
-    return hljs.highlight(string, { language }).value
+  if (language && highlighter.getLanguage(language)) {
+    return highlighter.highlight(string, { language }).value
   }
-  return hljs.highlightAuto(string).value
+  return highlighter.highlightAuto(string).value
 }
 
 /**
