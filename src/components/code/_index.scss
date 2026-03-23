@@ -5,19 +5,6 @@
 $_code-colour: #dd1144;
 
 @include nhsuk-exports("nhsuk-eleventy-plugin/components/code") {
-  // Reverse the colour of code that uses shell highlighting
-  .app-code__language--shell {
-    background-color: nhsuk-colour("black");
-    border: $nhsuk-focus-width solid nhsuk-colour("white");
-    -webkit-font-smoothing: auto;
-    margin-left: $nhsuk-focus-width * -1;
-    margin-right: $nhsuk-focus-width * -1;
-
-    code {
-      filter: invert(100%);
-    }
-  }
-
   .app-code__comment,
   .app-code__quote {
     color: nhsuk-tint(nhsuk-colour("grey-1"), 30);
