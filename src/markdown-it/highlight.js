@@ -39,7 +39,7 @@ export default function nhsukCodePlugin(md) {
     // Button is hidden by default and shown by JavaScript when clipboard API is available
     return `<div class="nhsuk-code nhsuk-code--button${reverseClass}" data-module="nhsuk-code">
   <button type="button" class="nhsuk-button nhsuk-button--secondary nhsuk-button--small nhsuk-code__button nhsuk-js-code-button" hidden>Copy code</button>
-  <pre class="nhsuk-code__container" tabindex="0"><code class="nhsuk-code__content">${code}</code></pre>
+  <pre class="nhsuk-code__container"><code class="nhsuk-code__content">${code}</code></pre>
     </div>`
   }
 }
