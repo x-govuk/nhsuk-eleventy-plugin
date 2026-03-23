@@ -14,6 +14,10 @@ export function highlightCode(string, language) {
   return highlighter.highlightAuto(string).value
 }
 
+
+// Languages that should use the reverse (dark background) style
+const reverseStyleLanguages = ['shell']
+
 /**
  * Custom fence renderer for nhsuk-frontend code component
  *
@@ -21,11 +25,9 @@ export function highlightCode(string, language) {
  * HTML compatible with the nhsuk-frontend code component, including the
  * copy button.
  *
- * @param {import('markdown-it')} md - markdown-it instance
+ * @import { default as MarkdownIt } from 'markdown-it'
+ * @param {MarkdownIt} md - markdown-it instance
  */
-// Languages that should use the reverse (dark background) style
-const reverseStyleLanguages = ['shell']
-
 export default function nhsukCodePlugin(md) {
   md.renderer.rules.fence = (tokens, idx) => {
     const token = tokens[idx]
