@@ -13,9 +13,8 @@ highlightJs.configure({ classPrefix: 'app-code__' })
 export function highlightCode(string, language) {
   if (language && highlightJs.getLanguage(language)) {
     return highlightJs.highlight(string, { language }).value
-  } 
-    return highlightJs.highlightAuto(string).value
-  
+  }
+  return highlightJs.highlightAuto(string).value
 }
 
 /**
