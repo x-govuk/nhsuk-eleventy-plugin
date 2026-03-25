@@ -1,6 +1,12 @@
 import { highlighter } from 'nhsuk-frontend/lib/highlighter/index.mjs'
 
-// Highlight code using highlight.js
+/**
+ * Highlight code using highlight.js
+ *
+ * @param {string} string - Code to highlight
+ * @param {string} language - Language for syntax highlighting
+ * @returns {string} Highlighted code HTML
+ */
 export function highlightCode(string, language) {
   const languages = language ? [language] : undefined
   return highlighter.highlightAuto(string, languages).value
@@ -16,7 +22,6 @@ const reverseStyleLanguages = ['shell']
  * HTML compatible with the nhsuk-frontend code component, including the
  * copy button.
  *
- * @import { default as MarkdownIt } from 'markdown-it'
  * @param {MarkdownIt} md - markdown-it instance
  */
 export default function nhsukCodePlugin(md) {
@@ -42,7 +47,5 @@ export default function nhsukCodePlugin(md) {
 }
 
 /**
- * @param {string} string - Code to highlight
- * @param {string} language - Language for syntax highlighting
- * @returns {string} Highlighted code HTML
+ * @import { default as MarkdownIt } from 'markdown-it'
  */
