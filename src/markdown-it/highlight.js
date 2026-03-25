@@ -1,4 +1,4 @@
-import { highlighter } from 'nhsuk-frontend/lib'
+import { highlighter } from 'nhsuk-frontend/lib/highlighter/index.mjs'
 
 /**
  * Highlight code using highlight.js
