@@ -2,4 +2,4 @@
 @forward "pkg:@x-govuk/nhsuk-eleventy-plugin";
 
 // Add the highlighter styles
-@forward "nhsuk-frontend/dist/nhsuk/lib/highlighter/styles";
+@forward "pkg:nhsuk-frontend/lib/highlighter/styles";
