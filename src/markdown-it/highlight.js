@@ -37,13 +37,13 @@ export default function nhsukCodePlugin(md) {
       ? 'nhsuk-code nhsuk-code--button nhsuk-code--reverse'
       : 'nhsuk-code nhsuk-code--button'
     const buttonClasses = isReverse
-      ? 'nhsuk-button--reverse'
-      : 'nhsuk-button--secondary'
+      ? 'nhsuk-button nhsuk-button--reverse nhsuk-button--small nhsuk-code__button nhsuk-js-code-button'
+      : 'nhsuk-button nhsuk-button--secondary nhsuk-button--small nhsuk-code__button nhsuk-js-code-button'
 
     // Output HTML compatible with nhsuk-frontend code component
     // Button is hidden by default and shown by JavaScript when clipboard API is available
     return `<div class="${codeClasses}" data-module="nhsuk-code">
-  <button type="button" class="nhsuk-button ${buttonClasses} nhsuk-button--small nhsuk-code__button nhsuk-js-code-button" hidden>Copy code</button>
+  <button type="button" class="${buttonClasses}" data-module="nhsuk-button" type="button" hidden>Copy code</button>
   <pre class="nhsuk-code__container"><code class="nhsuk-code__content">${code}</code></pre>
     </div>`
   }
