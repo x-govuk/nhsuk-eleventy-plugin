@@ -1,12 +1,6 @@
 import { highlighter } from 'nhsuk-frontend/lib/highlighter/index.mjs'
 
-/**
- * Highlight code using highlight.js
- *
- * @param {string} string - Code to highlight
- * @param {string} language - Language for syntax highlighting
- * @returns {string} Highlighted code HTML
- */
+// Highlight code using highlight.js
 export function highlightCode(string, language) {
   const languages = language ? [language] : undefined
   return highlighter.highlightAuto(string, languages).value
@@ -46,3 +40,9 @@ export default function nhsukCodePlugin(md) {
 </div>`
   }
 }
+
+/**
+ * @param {string} string - Code to highlight
+ * @param {string} language - Language for syntax highlighting
+ * @returns {string} Highlighted code HTML
+ */
