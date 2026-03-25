@@ -9,7 +9,7 @@ import { highlighter } from 'nhsuk-frontend/lib/highlighter/index.mjs'
  */
 export function highlightCode(string, language) {
   if (language && highlighter.getLanguage(language)) {
-    return highlighter.highlight(string, { language }).value
+    return highlighter.highlightAuto(string, { language }).value
   }
   return highlighter.highlightAuto(string).value
 }
