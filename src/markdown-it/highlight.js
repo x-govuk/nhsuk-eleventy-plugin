@@ -35,7 +35,7 @@ export default function nhsukCodePlugin(md) {
     // Output HTML compatible with nhsuk-frontend code component
     // Button is hidden by default and shown by JavaScript when clipboard API is available
     return `<div class="${codeClasses}" data-module="nhsuk-code">
-  <button type="button" class="${buttonClasses}" data-module="nhsuk-button" type="button" hidden>Copy code</button>
+  <button class="${buttonClasses}" data-module="nhsuk-button" type="button" hidden>Copy code</button>
   <pre class="nhsuk-code__container"><code class="nhsuk-code__content">${code}</code></pre>
 </div>`
   }
