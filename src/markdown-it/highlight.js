@@ -14,7 +14,6 @@ export function highlightCode(string, language) {
   return highlighter.highlightAuto(string).value
 }
 
-
 // Languages that should use the reverse (dark background) style
 const reverseStyleLanguages = ['shell']
 
