@@ -74,7 +74,7 @@
     "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^2.0.0",
     "markdown-it-table-of-contents": "^1.0.0",
-    "nhsuk-frontend": "^10.4.1",
+    "nhsuk-frontend": "^10.4.2",
     "rollup": "^4.1.0",
     "sass": "^1.45.1"
   },
