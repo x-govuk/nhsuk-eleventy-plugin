@@ -8,10 +8,8 @@ import { highlighter } from 'nhsuk-frontend/lib/highlighter/index.mjs'
  * @returns {string} Highlighted code HTML
  */
 export function highlightCode(string, language) {
-  if (language && highlighter.getLanguage(language)) {
-    return highlighter.highlightAuto(string, { language }).value
-  }
-  return highlighter.highlightAuto(string).value
+  const languages = language ? [language] : undefined
+  return highlighter.highlightAuto(string, languages).value
 }
 
 // Languages that should use the reverse (dark background) style
