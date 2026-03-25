@@ -45,6 +45,6 @@ export default function nhsukCodePlugin(md) {
     return `<div class="${codeClasses}" data-module="nhsuk-code">
   <button type="button" class="${buttonClasses}" data-module="nhsuk-button" type="button" hidden>Copy code</button>
   <pre class="nhsuk-code__container"><code class="nhsuk-code__content">${code}</code></pre>
-    </div>`
+</div>`
   }
 }
