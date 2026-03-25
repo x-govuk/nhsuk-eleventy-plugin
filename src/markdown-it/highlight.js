@@ -26,23 +26,30 @@ const reverseStyleLanguages = ['bash', 'shell', 'sh', 'zsh']
  */
 export default function nhsukCodePlugin(md) {
   md.renderer.rules.fence = (tokens, idx) => {
+    const addCopyCode = false // TODO: set to true if opted-in
     const token = tokens[idx]
     const language = token.info.trim()
     const code = highlightCode(token.content, language)
     const isReverse = reverseStyleLanguages.includes(language)
-    const codeClasses = isReverse
-      ? 'nhsuk-code nhsuk-code--button nhsuk-code--reverse'
-      : 'nhsuk-code nhsuk-code--button'
+    let codeClasses = 'nhsuk-code'
+    if (addCopyCode) codeClasses += ' nhsuk-code--button'
+    if (isReverse) codeClasses += ' nhsuk-code--reverse'
     const buttonClasses = isReverse
       ? 'nhsuk-button nhsuk-button--reverse nhsuk-button--small nhsuk-code__button nhsuk-js-code-button'
       : 'nhsuk-button nhsuk-button--secondary nhsuk-button--small nhsuk-code__button nhsuk-js-code-button'
 
     // Output HTML compatible with nhsuk-frontend code component
+    let html = `<div class="${codeClasses}" data-module="nhsuk-code">\n`
+
     // Button is hidden by default and shown by JavaScript when clipboard API is available
-    return `<div class="${codeClasses}" data-module="nhsuk-code">
-  <button class="${buttonClasses}" data-module="nhsuk-button" type="button" hidden>Copy code</button>
-  <pre class="nhsuk-code__container"><code class="nhsuk-code__content">${code}</code></pre>
-</div>`
+    if (addCopyCode) {
+      html += `  <button class="${buttonClasses}" data-module="nhsuk-button" type="button" hidden>Copy code</button>\n`
+    }
+
+    html += `  <pre class="nhsuk-code__container"><code class="nhsuk-code__content">${code}</code></pre>\n`
+    html += `</div>`
+
+    return html
   }
 }
 
