@@ -13,7 +13,7 @@ export function highlightCode(string, language) {
 }
 
 // Languages that should use the reverse (dark background) style
-const reverseStyleLanguages = ['shell']
+const reverseStyleLanguages = ['bash', 'shell', 'sh', 'zsh']
 
 /**
  * Custom fence renderer for nhsuk-frontend code component
