@@ -26,8 +26,13 @@ const reverseStyleLanguages = ['bash', 'shell', 'sh', 'zsh']
  */
 export default function nhsukCodePlugin(md) {
   md.renderer.rules.fence = (tokens, idx) => {
-    const addCopyCode = false // TODO: set to true if opted-in
     const token = tokens[idx]
+
+    // Check if the code block has the { .nhsuk-code--button }
+    // class added, to indicate that the copy button should be added.
+    const addCopyCode = token.attrs?.some(
+      (attr) => attr[0] === 'class' && attr[1]?.includes('nhsuk-code--button')
+    )
     const language = token.info.trim()
     const code = highlightCode(token.content, language)
     const isReverse = reverseStyleLanguages.includes(language)
