@@ -29,7 +29,8 @@ const x = 1
       `<div class="nhsuk-code" data-module="nhsuk-code">
   <pre class="nhsuk-code__container"><code class="nhsuk-code__content"><span class="nhsuk-code__keyword">const</span> x = <span class="nhsuk-code__number">1</span>
 </code></pre>
-</div>`
+</div>
+`
     )
   })
 
@@ -42,7 +43,8 @@ const x = 1
   <button class="nhsuk-button nhsuk-button--secondary nhsuk-button--small nhsuk-code__button nhsuk-js-code-button" data-module="nhsuk-button" type="button" hidden>Copy code</button>
   <pre class="nhsuk-code__container"><code class="nhsuk-code__content"><span class="nhsuk-code__keyword">const</span> x = <span class="nhsuk-code__number">1</span>
 </code></pre>
-</div>`
+</div>
+`
     )
   })
 })
