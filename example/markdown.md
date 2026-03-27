@@ -339,6 +339,36 @@ The rendered output looks like this:
 }
 ```
 
+For the language codes `bash`, `shell`, `sh`, `zsh`, the reversed code block style is used, for example:
+
+````markdown
+```shell
+npm install @11ty/eleventy @x-govuk/nhsuk-eleventy-plugin
+```
+````
+
+The rendered output looks like this:
+
+```shell
+npm install @11ty/eleventy @x-govuk/nhsuk-eleventy-plugin
+```
+
+#### Copy code button
+
+To include a button that allows readers to quickly copy the code, add `{ .nhsuk-code--button }` after the three backticks and language code. For example:
+
+````markdown
+```js { .nhsuk-code--button }
+console.log("Hello, world");
+```
+````
+
+The rendered output looks like this:
+
+```js { .nhsuk-code--button }
+console.log("Hello, world");
+```
+
 ## Emphasised text
 
 To emphasise text, add one asterisk or underscore before and after a word or phrase.
