@@ -8,7 +8,6 @@ import markdownItDeflist from 'markdown-it-deflist'
 import markdownItFootnote from 'markdown-it-footnote'
 import MarkdownItGitHubAlerts from 'markdown-it-github-alerts'
 import markdownItGovuk from 'markdown-it-govuk'
-import highlight from 'markdown-it-govuk/highlight'
 import markdownItImageFigures from 'markdown-it-image-figures'
 import markdownItIns from 'markdown-it-ins'
 import markdownItMark from 'markdown-it-mark'
@@ -20,6 +19,7 @@ import { alertRules } from './markdown-it/alert.js'
 import { defListRules } from './markdown-it/deflist.js'
 import { figureRules } from './markdown-it/figure.js'
 import { footnotesRules } from './markdown-it/footnote.js'
+import nhsukCodePlugin from './markdown-it/highlight.js'
 import { tableRules } from './markdown-it/table.js'
 
 /**
@@ -32,7 +32,6 @@ import { tableRules } from './markdown-it/table.js'
 export function md(markdownOptions = {}) {
   const opts = {
     breaks: true,
-    highlight,
     html: true,
     linkify: false,
     typographer: true,
@@ -46,6 +45,7 @@ export function md(markdownOptions = {}) {
       govspeak: ['blockquote', 'information-callout'],
       headingsStartWith: markdownOptions.headingsStartWith
     })
+    .use(nhsukCodePlugin)
     .use(markdownItAbbr)
     .use(markdownItAnchor, {
       permalink: markdownOptions.headingPermalinks

@@ -8,7 +8,6 @@ describe('markdown-it', () => {
     const { options } = md()
 
     assert.equal(options.breaks, true)
-    assert.equal(typeof options.highlight, 'function')
     assert.equal(options.html, true)
     assert.equal(options.linkify, false)
     assert.equal(options.typographer, true)
