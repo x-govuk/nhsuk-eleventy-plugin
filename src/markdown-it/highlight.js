@@ -30,14 +30,14 @@ export default function nhsukCodePlugin(md) {
 
     // Check if the code block has the { .nhsuk-code--button }
     // class added, to indicate that the copy button should be added.
-    const addCopyCode = token.attrs?.some(
+    const hasCopyButton = token.attrs?.some(
       ([name, value]) => name === 'class' && value?.includes('nhsuk-code--button')
     )
     const language = token.info.trim()
     const code = highlightCode(token.content, language)
     const isReverse = reverseStyleLanguages.includes(language)
     let codeClasses = 'nhsuk-code'
-    if (addCopyCode) codeClasses += ' nhsuk-code--button'
+    if (hasCopyButton) codeClasses += ' nhsuk-code--button'
     if (isReverse) codeClasses += ' nhsuk-code--reverse'
     const buttonClasses = isReverse
       ? 'nhsuk-button nhsuk-button--reverse nhsuk-button--small nhsuk-code__button nhsuk-js-code-button'
@@ -47,7 +47,7 @@ export default function nhsukCodePlugin(md) {
     let html = `<div class="${codeClasses}" data-module="nhsuk-code">\n`
 
     // Button is hidden by default and shown by JavaScript when clipboard API is available
-    if (addCopyCode) {
+    if (hasCopyButton) {
       html += `  <button class="${buttonClasses}" data-module="nhsuk-button" type="button" hidden>Copy code</button>\n`
     }
 
