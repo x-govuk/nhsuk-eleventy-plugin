@@ -31,7 +31,7 @@ export default function nhsukCodePlugin(md) {
     // Check if the code block has the { .nhsuk-code--button }
     // class added, to indicate that the copy button should be added.
     const addCopyCode = token.attrs?.some(
-      (attr) => attr[0] === 'class' && attr[1]?.includes('nhsuk-code--button')
+      ([name, value]) => name === 'class' && value?.includes('nhsuk-code--button')
     )
     const language = token.info.trim()
     const code = highlightCode(token.content, language)
@@ -52,7 +52,7 @@ export default function nhsukCodePlugin(md) {
     }
 
     html += `  <pre class="nhsuk-code__container"><code class="nhsuk-code__content">${code}</code></pre>\n`
-    html += `</div>`
+    html += `</div>\n`
 
     return html
   }
