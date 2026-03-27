@@ -27,6 +27,8 @@ const reverseStyleLanguages = ['bash', 'shell', 'sh', 'zsh']
 export default function nhsukCodePlugin(md) {
   md.renderer.rules.fence = (tokens, idx) => {
     const token = tokens[idx]
+    const language = token.info.trim()
+    const code = highlightCode(token.content, language)
 
     // Check if the code block has the { .nhsuk-code--button }
     // class added, to indicate that the copy button should be added.
@@ -34,9 +36,11 @@ export default function nhsukCodePlugin(md) {
       ([name, value]) =>
         name === 'class' && value?.includes('nhsuk-code--button')
     )
-    const language = token.info.trim()
-    const code = highlightCode(token.content, language)
+
+    // Languages use on the command line use a reverse style
     const isReverse = reverseStyleLanguages.includes(language)
+
+    // Set classes for the code block and the button
     let codeClasses = 'nhsuk-code'
     if (hasCopyButton) codeClasses += ' nhsuk-code--button'
     if (isReverse) codeClasses += ' nhsuk-code--reverse'
