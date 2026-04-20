@@ -89,7 +89,7 @@
     "stylelint-order": "^7.0.0"
   },
   "peerDependencies": {
-    "@sindresorhus/slugify": "^2.2.1",
+    "@sindresorhus/slugify": "^3.0.0",
     "markdown-it": "^14.1.1",
     "nunjucks": "^3.2.4"
   },
