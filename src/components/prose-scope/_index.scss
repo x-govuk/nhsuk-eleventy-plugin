@@ -35,7 +35,7 @@
     [class^="nhsuk-heading"][tabindex] .nhsuk-link {
       @include nhsuk-link-style-text;
 
-      // stylelint-disable no-duplicate-selectors
+      // stylelint-disable block-no-redundant-nested-style-rules
       & {
         text-decoration: none;
       }
