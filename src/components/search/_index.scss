@@ -60,7 +60,7 @@ $_input-padding-right: nhsuk-px-to-rem(12px + $_icon-size);
   }
 
   .app-search__menu--overlay {
-    box-shadow: 0 0 3px 0 rgba(nhsuk-colour("grey-1"), 0.5);
+    box-shadow: 0 0 3px 0 rgb(nhsuk-colour("grey-1"), 0.5);
     left: 0;
     position: absolute;
     top: 100%;
