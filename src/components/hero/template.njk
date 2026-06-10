@@ -1,4 +1,26 @@
 {% from "nhsuk/components/button/macro.njk" import button as nhsukButton %}
+
+{%- set classNamesHeading = "nhsuk-hero__heading" -%}
+
+{%- if params.headingSize and
+  params.headingSize in ["xxs", "xs", "s", "m", "l", "xl"] and (
+    not params.headingClasses or (
+      not "nhsuk-heading-xxs" in params.headingClasses and
+      not "nhsuk-heading-xs" in params.headingClasses and
+      not "nhsuk-heading-s" in params.headingClasses and
+      not "nhsuk-heading-m" in params.headingClasses and
+      not "nhsuk-heading-l" in params.headingClasses and
+      not "nhsuk-heading-xl" in params.headingClasses
+    )
+  )
+%}
+  {% set classNamesHeading = classNamesHeading ~ " nhsuk-heading-" ~ params.headingSize %}
+{% endif %}
+
+{%- if params.headingClasses %}
+  {% set classNamesHeading = classNamesHeading ~ " " ~ params.headingClasses %}
+{% endif %}
+
 <div class="nhsuk-hero">
   <div class="nhsuk-width-container nhsuk-hero--border">
     <div class="nhsuk-grid-row">
@@ -10,7 +32,7 @@
           </span>
           {% endif %}
           {% if params.title %}
-          <h1 class="nhsuk-hero__heading{%- if params.headingClasses %} {{ params.headingClasses }}{% endif %}">
+          <h1 class="{{ classNamesHeading }}">
             {{- params.title | smart -}}
           </h1>
           {% endif %}
