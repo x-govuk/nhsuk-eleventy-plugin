@@ -3,7 +3,7 @@ homepage: true
 layout: product
 title: Rapidly create HTML prototypes of NHS services
 description: Use prototypes to get valuable feedback and insights from user research or the people you work with.
-headingClasses: nhsuk-heading-l
+headingSize: l
 startButton:
   href: "#"
   text: Get started
