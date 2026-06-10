@@ -26,7 +26,7 @@ In addition to [common front matter options](/layouts/front-matter-options), thi
 
 | Name             | Type   | Description                                                                    |
 | ---------------- | ------ | ------------------------------------------------------------------------------ |
-| headingSize      | string | Size for the heading - `"m"`, `"l` or `"xl`                                    |
+| headingSize      | string | Size for the heading - for example, `"m"`, `"l` or `"xl`                       |
 | headingClasses   | string | Classes to use for heading in masthead                                         |
 | startButton      | object | Start button. Appears below the title and any description.                     |
 | startButton.text | string | Text for the start button (default is `Get started`)                           |
