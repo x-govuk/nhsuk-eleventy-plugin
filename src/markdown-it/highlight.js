@@ -1,4 +1,12 @@
+import hljs from 'highlight.js'
 import { highlighter } from 'nhsuk-frontend/lib/highlighter/index.mjs'
+
+// Register all highlight.js languages
+for (const name of hljs.listLanguages()) {
+  if (!highlighter.getLanguage(name)) {
+    highlighter.registerLanguage(name, hljs.getLanguage(name).rawDefinition)
+  }
+}
 
 /**
  * Highlight code using highlight.js
