@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 
 {% block beforeContent %}
-  {{ nhsukBreadcrumb({
+  {{ breadcrumb({
     items: breadcrumbItems
   }) if showBreadcrumbs }}
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 
 {% block beforeContent %}
-  {{ nhsukBreadcrumb({
+  {{ breadcrumb({
     items: breadcrumbItems
   }) if showBreadcrumbs }}
 {% endblock %}
@@ -18,7 +18,7 @@
   {% if showPagination %}
     {% set previous = collections.navigation | eleventyNavigation(sectionKey or options.homeKey) | getPreviousNavigationItem(page.url) %}
     {% set next = collections.navigation | eleventyNavigation(sectionKey or options.homeKey) | getNextNavigationItem(page.url) %}
-    {{ nhsukPagination({
+    {{ pagination({
       classes: "nhsuk-u-reading-width",
       previousUrl: previous.url if previous,
       previousPage: previous.title if previous,

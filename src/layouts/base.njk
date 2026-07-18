@@ -1,4 +1,4 @@
-{% extends "nhsuk/template.njk" %}
+{% extends "nhsuk/template-with-imports.njk" %}
 
 {% set themeColor = options.themeColor | default("#005eb8", true) -%}
 
@@ -14,12 +14,6 @@
 {# Navigation #}
 {% set breadcrumbItems = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: includeInBreadcrumbs, allowMissing: true }) | itemsFromNavigation(page.url) if eleventyNavigation.key %}
 {% set showBreadcrumbs = options.showBreadcrumbs != false and breadcrumbItems | length > 0 %}
-
-{% from "nhsuk/components/breadcrumb/macro.njk" import breadcrumb as nhsukBreadcrumb %}
-{% from "nhsuk/components/footer/macro.njk" import footer as nhsukFooter %}
-{% from "nhsuk/components/header/macro.njk" import header as nhsukHeader %}
-{% from "nhsuk/components/images/macro.njk" import image as nhsukImage %}
-{% from "nhsuk/components/pagination/macro.njk" import pagination as nhsukPagination %}
 
 {% from "components/card-group/macro.njk" import appCardGroup with context %}
 {% from "components/document-header/macro.njk" import appDocumentHeader %}
@@ -65,15 +59,15 @@
 {% block header %}
 {% if options._searchIndexPath %}
 <app-search index="{{ options._searchIndexPath | htmlBaseUrl }}">
-  {{ nhsukHeader(options.header | currentPage(page.url)) }}
+  {{ header(options.header | currentPage(page.url)) }}
 </app-search>
 {% else %}
-  {{ nhsukHeader(options.header | currentPage(page.url)) }}
+  {{ header(options.header | currentPage(page.url)) }}
 {% endif %}
 {% endblock %}
 
 {% block footer %}
-  {{ nhsukFooter(options.footer) }}
+  {{ footer(options.footer) }}
 {% endblock %}
 
 {% block bodyEnd %}
