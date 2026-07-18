@@ -36,7 +36,10 @@ export function nunjucksConfig(eleventyConfig) {
     ...(layouts ? [path.join(input, layouts)] : []),
     input,
     './node_modules/@x-govuk/nhsuk-eleventy-plugin/src',
-    './node_modules/nhsuk-frontend/dist'
+    'node_modules/nhsuk-frontend/dist/nhsuk/components',
+    'node_modules/nhsuk-frontend/dist/nhsuk/macros',
+    'node_modules/nhsuk-frontend/dist/nhsuk',
+    'node_modules/nhsuk-frontend/dist'
   ]
 
   /**

@@ -1,7 +1,7 @@
 {% extends "layouts/base.njk" %}
 
 {% block beforeContent %}
-  {{ nhsukBreadcrumb({
+  {{ breadcrumb({
     items: breadcrumbItems
   }) if showBreadcrumbs }}
 {% endblock %}
@@ -26,7 +26,7 @@
     items: pagination.items
   }) }}
 
-  {{ nhsukPagination({
+  {{ pagination({
     previous: {
       href: pagination.href.previous
     },
