@@ -35,7 +35,7 @@ export function nunjucksConfig(eleventyConfig) {
     ...(includes ? [path.join(input, includes)] : []),
     ...(layouts ? [path.join(input, layouts)] : []),
     input,
-    './node_modules/@x-govuk/nhsuk-eleventy-plugin/src',
+    'node_modules/@x-govuk/nhsuk-eleventy-plugin/src',
     'node_modules/nhsuk-frontend/dist/nhsuk/components',
     'node_modules/nhsuk-frontend/dist/nhsuk/macros',
     'node_modules/nhsuk-frontend/dist/nhsuk',
