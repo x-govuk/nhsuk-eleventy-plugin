@@ -32,9 +32,6 @@ For example, to show a message at the top of each page that uses the page layout
 {% raw %}{# Extend a plugin layout #}
 {% extends "layouts/page.njk" %}
 
-{# Load any NHS.UK frontend components #}
-{% from "nhsuk/components/inset-text/macro.njk" import insetText %}
-
 {# Override the `content` block #}
 {% block content %}
   {{ appDocumentHeader({
