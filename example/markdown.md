@@ -437,6 +437,7 @@ H~2~O
 
 The rendered output looks like this:
 
+<!-- prettier-ignore -->
 H~2~O
 
 For superscript text, use one caret symbol (`^`) before and after the characters.
