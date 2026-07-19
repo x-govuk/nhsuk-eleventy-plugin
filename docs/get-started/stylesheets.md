@@ -14,9 +14,9 @@ To add a custom stylesheet, create a Sass (`.scss`) file in your project. The pl
 
 For example, add `assets/application.scss`, which will be compiled to `assets/application.css`.
 
-When you provide one or more stylesheets, the default `application.css` is no longer generated or linked — your stylesheets replace it entirely. 
+When you provide one or more stylesheets, the default `application.css` is no longer generated or linked — your stylesheets replace it entirely.
 
-To add the NHS.UK frontend styles and extra styles used by the plugin back in, start your stylesheet by forwarding to the eleventy plugin: 
+To add the NHS.UK frontend styles and extra styles used by the plugin back in, start your stylesheet by forwarding to the eleventy plugin:
 
 ```scss
 // Import NHS.UK Frontend and plugin styles
@@ -39,7 +39,7 @@ export default function(eleventyConfig) {
   eleventyConfig.addPlugin(nhsukEleventyPlugin, {
 
     // Other options
-    
+
     stylesheets: ['/assets/application.css']
   })
 }
