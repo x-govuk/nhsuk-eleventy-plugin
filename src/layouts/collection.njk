@@ -23,18 +23,18 @@
 
   {{ appDocumentList({
     headingLevel: 3 if paginationHeading else 2,
-    items: pagination.items
+    items: eleventyPagination.items
   }) }}
 
   {{ pagination({
     previous: {
-      href: pagination.href.previous
+      href: eleventyPagination.href.previous
     },
     next: {
-      href: pagination.href.next
+      href: eleventyPagination.href.next
     },
-    items: pagination | itemsFromPagination
-  }) if pagination.pages.length > 1 }}
+    items: eleventyPagination | itemsFromPagination
+  }) if eleventyPagination.pages.length > 1 }}
 
   {{ appRelated(related) if related }}
 {% endblock %}
