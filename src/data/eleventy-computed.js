@@ -11,7 +11,7 @@ import {
 export const eleventyComputed = {
   // Alias for Eleventy's pagination data to avoid naming conflict with the
   // nhsuk-frontend `pagination` Nunjucks macro in template-with-imports.njk
-  paginationData: (data) => data.pagination,
+  eleventyPagination: (data) => data.pagination,
   eleventyNavigation: {
     key: (data) => getNavigationKey(data),
     parent: (data) => getNavigationParent(data),
