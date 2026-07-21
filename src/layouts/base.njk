@@ -45,7 +45,6 @@
   {% if options.url %}<meta property="og:url" content="{{ page.url | canonicalUrl }}">{% endif %}
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
-  {% if opengraphImageUrl %}<meta property="og:image" content="{{ opengraphImageUrl }}">{% endif %}
   {% if opengraphImage.alt %}<meta property="og:image:alt" content="{{ opengraphImage.alt }}">{% endif %}
 {% endblock %}
 
