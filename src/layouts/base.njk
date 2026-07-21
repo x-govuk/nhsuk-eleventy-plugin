@@ -5,7 +5,7 @@
 {#- Set opengraphImage and opengraphImageUrl to either the one
     from the page metadata or else fallback to the generic one from options. -#}
 {% set opengraphImage = eleventyImage if eleventyImage.opengraphImage else opengraphImage %}
-{% set opengraphImageUrl = (opengraphImage.src if opengraphImage else options.opengraphImageUrl) | canonicalUrl %}
+{% set opengraphImageUrl = (opengraphImage.src if opengraphImage.src else options.opengraphImageUrl) | canonicalUrl %}
 
 {# Pagination #}
 {% set pageNumber = pagination.pageNumber + 1 %}
