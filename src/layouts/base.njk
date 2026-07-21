@@ -2,10 +2,10 @@
 
 {% set themeColor = options.themeColor | default("#005eb8", true) -%}
 
-{#- Set the opengraphImageUrl in parent template to either the one
+{#- Set opengraphImage and opengraphImageUrl to either the one
     from the page metadata or else fallback to the generic one from options. -#}
-{% set opengraphImage = image if image.opengraphImage else opengraphImage %}
-{% set opengraphImageUrl = (opengraphImage.src | canonicalUrl) if opengraphImage else options.opengraphImageUrl %}
+{% set opengraphImage = eleventyImage if eleventyImage.opengraphImage else opengraphImage %}
+{% set opengraphImageUrl = (opengraphImage.src if opengraphImage.src else options.opengraphImageUrl) | canonicalUrl %}
 
 {# Pagination #}
 {% set pageNumber = pagination.pageNumber + 1 %}
@@ -45,8 +45,6 @@
   {% if options.url %}<meta property="og:url" content="{{ page.url | canonicalUrl }}">{% endif %}
   <meta property="og:title" content="{{ title }}">
   {% if description %}<meta property="og:description" name="description" content="{{ description | markdown("inline") | striptags(true) }}">{% endif %}
-  {% if opengraphImage.src %}<meta name="og:image" content="{{ opengraphImage.src | canonicalUrl }}">
-  {% endif %}
   {% if opengraphImage.alt %}<meta property="og:image:alt" content="{{ opengraphImage.alt }}">{% endif %}
 {% endblock %}
 
