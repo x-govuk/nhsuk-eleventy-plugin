@@ -35,6 +35,7 @@ export default function(eleventyConfig) {
 | icons.touch           | string or boolean | Override NHS.UK touch icon. Use `false` to not include a touch icon.                                                                                                         |
 | markdown              | object            | Options for [Markdown](#options-for-markdown)                                                                                                                                |
 | opengraphImageUrl     | string            | URL for default Open Graph share image                                                                                                                                       |
+| scripts               | array             | JavaScript files to load on every page. Files must use [JavaScript module format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules). |
 | showBreadcrumbs       | boolean           | Show breadcrumb navigation (default is `true` for nested pages)                                                                                                              |
 | stylesheets           | array             | [Stylesheets](/get-started/stylesheets) to load instead of default application styles                                                                                        |
 | templates             | object            | Configuration for page templates                                                                                                                                             |
