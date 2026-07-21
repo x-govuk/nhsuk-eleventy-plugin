@@ -25,7 +25,9 @@
       classes: "app-image--full",
       src: eleventyImage.src,
       alt: eleventyImage.alt,
-      caption: eleventyImage.caption | markdown("inline")
+      caption: {
+        html: eleventyImage.caption | markdown("inline")
+      }
     }) if eleventyImage }}
 
     {{ content }}
