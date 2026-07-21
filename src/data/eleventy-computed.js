@@ -12,6 +12,10 @@ export const eleventyComputed = {
   // Alias for Eleventy's pagination data to avoid naming conflict with the
   // nhsuk-frontend `pagination` Nunjucks macro in template-with-imports.njk
   eleventyPagination: (data) => data.pagination,
+
+  // Alias for page image data to avoid naming conflict with the
+  // nhsuk-frontend `image` Nunjucks macro in template-with-imports.njk
+  eleventyImage: (data) => data.image,
   eleventyNavigation: {
     key: (data) => getNavigationKey(data),
     parent: (data) => getNavigationParent(data),

@@ -23,10 +23,10 @@
   {% call appProseScope() %}
     {{ image({
       classes: "app-image--full",
-      src: image.src,
-      alt: image.alt,
-      caption: image.caption | markdown("inline")
-    }) if image }}
+      src: eleventyImage.src,
+      alt: eleventyImage.alt,
+      caption: eleventyImage.caption | markdown("inline")
+    }) if eleventyImage }}
 
     {{ content }}
   {% endcall %}
