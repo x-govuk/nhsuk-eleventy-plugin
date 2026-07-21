@@ -72,7 +72,7 @@
 
 {% block bodyEnd %}
   {% block scripts %}
-  {%- for script in options.scripts %}
+  {%- for script in options.javascripts %}
   <script src="{{ script }}" type="module"></script>
   {%- endfor %}
   {% endblock %}
