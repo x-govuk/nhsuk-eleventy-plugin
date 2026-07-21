@@ -71,5 +71,9 @@
 {% endblock %}
 
 {% block bodyEnd %}
-  {% block scripts %}{% endblock %}
+  {% block scripts %}
+  {%- for script in options.javascripts %}
+  <script type="module" src="{{ script }}"></script>
+  {%- endfor %}
+  {% endblock %}
 {% endblock %}
