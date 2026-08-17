@@ -9,6 +9,6 @@
 
   {{ appDocumentList({
     headingLevel: 3 if paginationHeading else 2,
-    items: collections[tag] | reverse
+    items: collections[eleventyTag] | reverse
   }) }}
 {% endblock %}
