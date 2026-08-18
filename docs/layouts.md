@@ -32,6 +32,12 @@ For example, to show a message at the top of each page that uses the page layout
 {% raw %}{# Extend a plugin layout #}
 {% extends "layouts/page.njk" %}
 
+{# Load any NHS.UK frontend components #}
+{% from "notification-banner/macro.njk" import notificationBanner %}
+
+{# If the component shares the same name as you’d like to use in front matter data, you can import it with a prefix #}
+{% from "tabs/macro.njk" import tabs as nhsukTabs %}
+
 {# Override the `content` block #}
 {% block content %}
   {{ appDocumentHeader({
