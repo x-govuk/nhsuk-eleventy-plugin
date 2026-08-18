@@ -33,7 +33,7 @@ For example, to show a message at the top of each page that uses the page layout
 {% extends "layouts/page.njk" %}
 
 {# Load any NHS.UK frontend components #}
-{% from "inset-text/macro.njk" import insetText %}
+{% from "notification-banner/macro.njk" import notificationBanner %}
 
 {# Override the `content` block #}
 {% block content %}
