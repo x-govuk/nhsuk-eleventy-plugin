@@ -80,7 +80,7 @@
     "sass": "^1.101.0"
   },
   "devDependencies": {
-    "@x-govuk/eslint-config": "^0.0.2",
+    "@x-govuk/eslint-config": "^0.0.3",
     "@x-govuk/nhsuk-eleventy-plugin": "file:./",
     "np": "^12.0.0",
     "prettier": "^3.9.5",
