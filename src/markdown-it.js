@@ -30,7 +30,7 @@ import { tableRules } from './markdown-it/table.js'
  * @returns {import('markdown-it')} markdown-it instance
  */
 export function md(markdownOptions = {}) {
-  const opts = {
+  const options = {
     breaks: true,
     html: true,
     linkify: false,
@@ -38,13 +38,19 @@ export function md(markdownOptions = {}) {
     ...markdownOptions
   }
 
-  const md = new MarkdownIt(opts)
-    .use(markdownItGovuk, {
-      brand: 'nhsuk',
-      calvert: true,
-      govspeak: ['blockquote', 'information-callout'],
-      headingsStartWith: markdownOptions.headingsStartWith
-    })
+  const md = new MarkdownIt(options)
+
+  // markdown-it-attribution still calls `md.utils.assign`, a helper that
+  // was removed from markdown-it in v14+ (it uses Object.assign internally
+  // now). Restore it before loading the plugin so it doesn’t crash.
+  md.utils.assign = Object.assign
+
+  md.use(markdownItGovuk, {
+    brand: 'nhsuk',
+    calvert: true,
+    govspeak: ['blockquote', 'information-callout'],
+    headingsStartWith: markdownOptions.headingsStartWith
+  })
     .use(nhsukCodePlugin)
     .use(markdownItAbbr)
     .use(markdownItAnchor, {

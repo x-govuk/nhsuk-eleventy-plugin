@@ -60,11 +60,11 @@
     "@x-govuk/govuk-eleventy-plugin": "^9.0.2",
     "accessible-autocomplete": "^3.0.1",
     "deepmerge": "^4.3.1",
-    "highlight.js": "^11.11.1",
+    "highlight.js": "^11.12.0",
     "markdown-it-abbr": "^2.0.0",
-    "markdown-it-anchor": "^9.2.1",
+    "markdown-it-anchor": "^10.0.0",
     "markdown-it-attribution": "^0.1.4",
-    "markdown-it-attrs": "^5.0.0",
+    "markdown-it-attrs": "^5.0.1",
     "markdown-it-deflist": "^4.0.0",
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-github-alerts": "^1.0.1",
@@ -75,22 +75,22 @@
     "markdown-it-sub": "^2.0.0",
     "markdown-it-sup": "^2.0.0",
     "markdown-it-table-of-contents": "^1.2.0",
-    "nhsuk-frontend": "^10.6.0",
+    "nhsuk-frontend": "^10.6.1",
     "rollup": "^4.62.2",
-    "sass": "^1.101.0"
+    "sass": "^1.104.1"
   },
   "devDependencies": {
-    "@x-govuk/eslint-config": "^0.0.2",
+    "@x-govuk/eslint-config": "^0.0.3",
     "@x-govuk/nhsuk-eleventy-plugin": "file:./",
-    "np": "^12.0.0",
-    "prettier": "^3.9.5",
-    "stylelint": "^17.14.0",
+    "np": "^12.1.1",
+    "prettier": "^3.9.8",
+    "stylelint": "^17.15.0",
     "stylelint-config-gds": "^3.0.0",
     "stylelint-order": "^8.1.1"
   },
   "peerDependencies": {
-    "@sindresorhus/slugify": "^3.0.0",
-    "markdown-it": "^14.2.0",
+    "@sindresorhus/slugify": "^3.0.1",
+    "markdown-it": "^15.0.2",
     "nunjucks": "^3.2.4"
   },
   "engines": {
