@@ -28,11 +28,6 @@ $_input-padding-right: nhsuk-px-to-rem(12px + $_icon-size);
     border-radius: $nhsuk-border-radius;
     padding-right: $_input-padding-right;
     width: 100%;
-
-    &:focus {
-      background-position: top nhsuk-px-to-rem(3px) right nhsuk-px-to-rem(6px);
-      padding-right: $_input-padding-right;
-    }
   }
 
   .nhsuk-header__search-input.app-search__hint {
