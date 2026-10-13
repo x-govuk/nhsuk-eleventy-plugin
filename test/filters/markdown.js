@@ -4,19 +4,19 @@ import { describe, it } from 'node:test'
 import { markdown } from '../../src/filters/markdown.js'
 
 describe('markdown filter', () => {
-  it('Converts Markdown string to HTML', () => {
+  it('Converts Markdown string to HTML, ignoring emphasis', () => {
     const result = markdown('**this** is _emphasis_')
 
     assert.equal(
       result,
-      '<p class="nhsuk-body"><strong>this</strong> is <em>emphasis</em></p>\n'
+      '<p class="nhsuk-body"><strong>this</strong> is emphasis</p>\n'
     )
   })
 
-  it('Converts Markdown string to HTML without paragraph wrap', () => {
+  it('Converts Markdown string to HTML without paragraph wrap, ignoring emphasis', () => {
     const result = markdown('**this** is _emphasis_', 'inline')
 
-    assert.equal(result, '<strong>this</strong> is <em>emphasis</em>')
+    assert.equal(result, '<strong>this</strong> is emphasis')
   })
 
   it('Converts a Markdown code block to use the nhsuk-code component structure', () => {

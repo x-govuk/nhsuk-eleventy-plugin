@@ -64,6 +64,15 @@ describe('markdown-it', () => {
     assert.match(result, /<dl class="nhsuk-body-m"/)
   })
 
+  it('Ignores italic styles', () => {
+    const result = md().render('*One* _two_ ***three***')
+
+    assert.equal(
+      result,
+      '<p class="nhsuk-body">One two <strong>three</strong></p>\n'
+    )
+  })
+
   it('Renders a figure', () => {
     const result = md().render(`![Alt](# 'Title')`)
 

@@ -17,6 +17,7 @@ import markdownItTableOfContents from 'markdown-it-table-of-contents'
 
 import { alertRules } from './markdown-it/alert.js'
 import { defListRules } from './markdown-it/deflist.js'
+import { emphasisRules } from './markdown-it/emphasis.js'
 import { figureRules } from './markdown-it/figure.js'
 import { footnotesRules } from './markdown-it/footnote.js'
 import nhsukCodePlugin from './markdown-it/highlight.js'
@@ -70,6 +71,7 @@ export function md(markdownOptions = {}) {
     .use(markdownItAttrs)
     .use(markdownItDeflist)
     .use(defListRules)
+    .use(emphasisRules)
     .use(markdownItFootnote)
     .use(footnotesRules)
     .use(MarkdownItGitHubAlerts)
