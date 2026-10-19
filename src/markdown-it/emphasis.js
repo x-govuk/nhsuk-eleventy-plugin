@@ -7,7 +7,7 @@
  * NHS.UK frontend also only includes upright regular and bold faces of
  * Frutiger, so browsers would otherwise synthesise “faux italics” by
  * slanting the upright glyphs.
- * 
+ *
  * @param {import('markdown-it')} md - markdown-it instance
  */
 export function emphasisRules(md) {
