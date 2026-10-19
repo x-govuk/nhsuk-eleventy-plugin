@@ -52,13 +52,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy": "^3.1.7",
     "@11ty/eleventy-navigation": "^1.0.5",
     "@rollup/plugin-commonjs": "^29.0.3",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^1.0.0",
     "@x-govuk/govuk-eleventy-plugin": "^9.0.2",
-    "accessible-autocomplete": "^3.0.1",
+    "accessible-autocomplete": "^3.0.2",
     "deepmerge": "^4.3.1",
     "highlight.js": "^11.12.0",
     "markdown-it-abbr": "^2.0.0",
@@ -76,21 +76,21 @@
     "markdown-it-sup": "^2.0.0",
     "markdown-it-table-of-contents": "^1.2.0",
     "nhsuk-frontend": "^10.6.1",
-    "rollup": "^4.62.2",
-    "sass": "^1.104.1"
+    "rollup": "^4.64.10",
+    "sass": "^1.105.2"
   },
   "devDependencies": {
     "@x-govuk/eslint-config": "^0.0.3",
     "@x-govuk/nhsuk-eleventy-plugin": "file:./",
     "np": "^12.1.1",
-    "prettier": "^3.9.8",
-    "stylelint": "^17.15.0",
+    "prettier": "^3.9.10",
+    "stylelint": "^17.16.0",
     "stylelint-config-gds": "^3.0.0",
-    "stylelint-order": "^8.1.1"
+    "stylelint-order": "^8.1.2"
   },
   "peerDependencies": {
     "@sindresorhus/slugify": "^3.0.1",
-    "markdown-it": "^15.0.2",
+    "markdown-it": "^15.0.3",
     "nunjucks": "^3.2.4"
   },
   "engines": {
