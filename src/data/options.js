@@ -17,6 +17,7 @@ const defaults = {
     headingsStartWith: 'xl'
   },
   opengraphImageUrl: '/assets/images/nhsuk-opengraph-image.png',
+  javascripts: [],
   stylesheets: [],
   titleSuffix: 'NHS',
   url: false,
