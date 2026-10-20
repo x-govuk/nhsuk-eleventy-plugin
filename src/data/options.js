@@ -1,5 +1,7 @@
 import deepmerge from 'deepmerge'
 
+import { resolveContentSecurityPolicy } from '../csp.js'
+
 /**
  * Default option values
  *
@@ -17,6 +19,7 @@ const defaults = {
     headingsStartWith: 'xl'
   },
   opengraphImageUrl: '/assets/images/nhsuk-opengraph-image.png',
+  scripts: [],
   stylesheets: [],
   titleSuffix: 'NHS',
   url: false,
@@ -48,6 +51,15 @@ export function defaultPluginOptions(options, pathPrefix) {
   if (options.templates?.feed) {
     // Add _feedPath to enable feed to be linked to from page head
     options._feedPath = options.templates?.feed?.permalink || '/feed.xml'
+  }
+
+  // Resolve Content Security Policy, including sources needed by `scripts`
+  const contentSecurityPolicy = resolveContentSecurityPolicy(
+    options.contentSecurityPolicy,
+    options.scripts
+  )
+  if (contentSecurityPolicy) {
+    options._contentSecurityPolicy = contentSecurityPolicy
   }
 
   // Show message if using deprecated headingPermalinks option
