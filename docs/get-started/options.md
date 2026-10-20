@@ -26,6 +26,7 @@ export default function(eleventyConfig) {
 
 | Name                  | Type              | Description                                                                                                                                                                  |
 | --------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| contentSecurityPolicy | object or boolean | Configure a [Content Security Policy](/get-started/content-security-policy) (default is `false`)                                                                             |
 | footer                | object            | Options for [footer component](https://service-manual.nhs.uk/design-system/components/footer)                                                                                |
 | header                | object            | Options for [header component](https://service-manual.nhs.uk/design-system/components/header)                                                                                |
 | homeKey               | string            | First item in pagination and key to use when referring to the home page for [`eleventyNavigation.parent`](https://www.11ty.dev/docs/plugins/navigation/) (default is `Home`) |
@@ -35,6 +36,7 @@ export default function(eleventyConfig) {
 | icons.touch           | string or boolean | Override NHS.UK touch icon. Use `false` to not include a touch icon.                                                                                                         |
 | markdown              | object            | Options for [Markdown](#options-for-markdown)                                                                                                                                |
 | opengraphImageUrl     | string            | URL for default Open Graph share image                                                                                                                                       |
+| scripts               | array             | Add [scripts](/get-started/scripts), for example web analytics                                                                                                               |
 | showBreadcrumbs       | boolean           | Show breadcrumb navigation (default is `true` for nested pages)                                                                                                              |
 | stylesheets           | array             | [Stylesheets](/get-started/stylesheets) to load instead of default application styles                                                                                        |
 | templates             | object            | Configuration for page templates                                                                                                                                             |

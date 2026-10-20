@@ -30,6 +30,7 @@
 {% from "components/metadata/macro.njk" import appMetadata %}
 {% from "components/prose-scope/macro.njk" import appProseScope %}
 {% from "components/related/macro.njk" import appRelated with context %}
+{% from "components/script/macro.njk" import appScript %}
 {% from "components/sub-navigation/macro.njk" import appSubNavigation %}
 
 {% block headIcons %}
@@ -39,7 +40,19 @@
 {% endblock %}
 
 {% block head %}
+  {#- Must come before anything the policy applies to. The placeholder is
+      replaced with the full policy once the page has been rendered. -#}
+  {% if options._contentSecurityPolicy %}
+  <meta http-equiv="Content-Security-Policy" content="__NHSUK_CSP_POLICY__">
+  {% endif %}
+
   <script src="/assets/application.js" type="module"></script>
+
+  {% for script in options.scripts %}
+  {% if script.position != "bodyEnd" %}
+  {{ appScript(script) }}
+  {% endif %}
+  {% endfor %}
 
   {% for stylesheet in options.stylesheets %}
   <link rel="stylesheet" href="{{ stylesheet }}">
@@ -78,5 +91,10 @@
 {% endblock %}
 
 {% block bodyEnd %}
+  {% for script in options.scripts %}
+  {% if script.position == "bodyEnd" %}
+  {{ appScript(script) }}
+  {% endif %}
+  {% endfor %}
   {% block scripts %}{% endblock %}
 {% endblock %}

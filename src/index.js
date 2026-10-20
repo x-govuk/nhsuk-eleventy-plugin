@@ -14,6 +14,7 @@ import {
 } from '@x-govuk/govuk-eleventy-plugin/templates'
 import { getLayoutTemplates } from '@x-govuk/govuk-eleventy-plugin/utils'
 
+import { applyContentSecurityPolicy } from './csp.js'
 import { eleventyComputed } from './data/eleventy-computed.js'
 import { defaultPluginOptions } from './data/options.js'
 import { generateAssets } from './events/generate-nhsuk-assets.js'
@@ -128,6 +129,22 @@ export async function nhsukEleventyPlugin(eleventyConfig, pluginOptions = {}) {
   // Plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin)
   eleventyConfig.addPlugin(eleventyNavigation)
+
+  // Content Security Policy
+  const contentSecurityPolicy = options._contentSecurityPolicy
+
+  if (contentSecurityPolicy) {
+    eleventyConfig.addTransform(
+      'nhsuk-content-security-policy',
+      function (content) {
+        if (!this.page.outputPath?.endsWith('.html')) {
+          return content
+        }
+
+        return applyContentSecurityPolicy(content, contentSecurityPolicy)
+      }
+    )
+  }
 
   // Events
   eleventyConfig.on('eleventy.after', async ({ dir }) => {

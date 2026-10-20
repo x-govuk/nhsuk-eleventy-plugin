@@ -1,0 +1,10 @@
+<script
+  {%- if params.src %} src="{{ params.src | escape }}"{% endif %}
+  {%- if params.type %} type="{{ params.type | escape }}"{% endif %}
+  {%- if params.defer %} defer{% endif %}
+  {%- if params.async %} async{% endif %}
+  {%- if params.integrity %} integrity="{{ params.integrity | escape }}"{% endif %}
+  {%- if params.crossorigin %} crossorigin="{{ params.crossorigin | escape }}"{% endif %}
+  {%- for name, value in params.attributes %} {{ name | escape }}="{{ value | escape }}"{% endfor %}>
+  {{- params.inline | safe if params.inline -}}
+</script>
