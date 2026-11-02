@@ -73,13 +73,38 @@ describe('markdown-it', () => {
     )
   })
 
-  it('Renders a figure', () => {
-    const result = md().render(`![Alt](# 'Title')`)
+  it('Renders a full-width figure by default', () => {
+    const result = md().render(`![Alt](/assets/image.jpg 'Title')`)
 
     assert.equal(
       result,
-      `<figure class="nhsuk-image">\n<img src="#" alt="Alt" class="nhsuk-image__img"><figcaption class="nhsuk-image__caption">\nTitle</figcaption></figure>\n`
+      `<figure class="nhsuk-image nhsuk-u-width-full">\n<img src="/assets/image.jpg" alt="Alt" class="nhsuk-image__img"><figcaption class="nhsuk-image__caption">\nTitle</figcaption></figure>\n`
     )
+  })
+
+  it('Adds NHS width utility classes from image URL fragments', () => {
+    const widths = [
+      'full',
+      'three-quarters',
+      'two-thirds',
+      'one-half',
+      'one-third',
+      'one-quarter'
+    ]
+
+    for (const width of widths) {
+      const result = md().render(`![Alt](/assets/image.jpg#width-${width})`)
+
+      assert.match(result, new RegExp(`nhsuk-u-width-${width}`))
+      assert.match(result, /<img src="\/assets\/image\.jpg"/)
+    }
+  })
+
+  it('Adds the full-page image class from the image URL fragment', () => {
+    const result = md().render('![Alt](/assets/image.jpg#width-full-page)')
+
+    assert.match(result, /<figure class="nhsuk-image app-u-full-page">/)
+    assert.match(result, /<img src="\/assets\/image\.jpg"/)
   })
 
   it('Renders footnotes', () => {

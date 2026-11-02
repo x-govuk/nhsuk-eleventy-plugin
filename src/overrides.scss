@@ -1,0 +1,16 @@
+@use "vendor/nhsuk-frontend" as *;
+
+// This class makes the element the width of the full page,
+// even if it is contained in a narrower column
+.app-u-full-page {
+  max-width: none;
+  width: calc(100vw - #{$nhsuk-gutter});
+
+  @media #{nhsuk-from-breakpoint(desktop)} {
+    width: calc(100vw - #{$nhsuk-gutter * 2});
+  }
+
+  @media (min-width: #{$nhsuk-page-width + $nhsuk-gutter * 2}) {
+    width: $nhsuk-page-width;
+  }
+}
