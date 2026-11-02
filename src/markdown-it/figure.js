@@ -6,7 +6,7 @@
 export function figureRules(md) {
   const { rules } = md.renderer
 
-  rules.figure_open = () => '<figure class="nhsuk-image">\n'
+  rules.figure_open = () => '<figure class="nhsuk-image nhsuk-u-width-full">\n'
 
   rules.figcaption_open = () => '<figcaption class="nhsuk-image__caption">\n'
 }

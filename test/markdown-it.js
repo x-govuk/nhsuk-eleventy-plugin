@@ -78,7 +78,7 @@ describe('markdown-it', () => {
 
     assert.equal(
       result,
-      `<figure class="nhsuk-image">\n<img src="#" alt="Alt" class="nhsuk-image__img"><figcaption class="nhsuk-image__caption">\nTitle</figcaption></figure>\n`
+      `<figure class="nhsuk-image nhsuk-u-width-full">\n<img src="#" alt="Alt" class="nhsuk-image__img"><figcaption class="nhsuk-image__caption">\nTitle</figcaption></figure>\n`
     )
   })
 
