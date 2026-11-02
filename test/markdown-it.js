@@ -93,9 +93,7 @@ describe('markdown-it', () => {
     ]
 
     for (const width of widths) {
-      const result = md().render(
-        `![Alt](/assets/image.jpg#width-${width})`
-      )
+      const result = md().render(`![Alt](/assets/image.jpg#width-${width})`)
 
       assert.match(result, new RegExp(`nhsuk-u-width-${width}`))
       assert.match(result, /<img src="\/assets\/image\.jpg"/)
@@ -103,9 +101,7 @@ describe('markdown-it', () => {
   })
 
   it('Adds the full-page image class from the image URL fragment', () => {
-    const result = md().render(
-      '![Alt](/assets/image.jpg#width-full-page)'
-    )
+    const result = md().render('![Alt](/assets/image.jpg#width-full-page)')
 
     assert.match(result, /<figure class="nhsuk-image app-u-full-page">/)
     assert.match(result, /<img src="\/assets\/image\.jpg"/)
